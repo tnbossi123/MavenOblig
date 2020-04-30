@@ -10,6 +10,11 @@ import javafx.scene.control.Button;
 public class PrimaryController {
 
     @FXML
+    void btnLogin(ActionEvent event) throws IOException {
+        App.setRoot("secondary");
+    }
+
+    @FXML
     private Button primaryButton;
 
     @FXML
@@ -18,3 +23,9 @@ public class PrimaryController {
     }
 
 }
+
+
+
+
+
+
