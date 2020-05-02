@@ -18,8 +18,8 @@ public class PrimaryController {
     private Button primaryButton;
 
     @FXML
-    void switchToSecondary(ActionEvent event) {
-
+    void switchToSecondary(ActionEvent event) throws IOException {
+        App.setRoot("register");
     }
 
 }
