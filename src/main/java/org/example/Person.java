@@ -8,16 +8,18 @@ package org.example;
         String zip;
         String birthday;
         String email;
+        String password;
         String phoneNumber;
 
         // Constructors
-        public Person(String name, String adress, String city, String zip, String birthday, String email, String phoneNumber){
+        public Person(String name, String adress, String city, String zip, String birthday, String email, String password, String phoneNumber){
             this.name = name;
             this.adress = adress;
             this.city = city;
             this.zip = zip;
             this.birthday = birthday;
             this.email = email;
+            this.password = password;
             this.phoneNumber = phoneNumber;
         }
 
@@ -47,6 +49,10 @@ package org.example;
             return email;
         }
 
+        public String getPassword() {
+            return password;
+        }
+
         public String getPhoneNumber() {
             return phoneNumber;
 
@@ -58,8 +64,8 @@ package org.example;
 
         int customerId;
 
-        public Customer(String name, String adress, String city, String zip, String birthday, String email, String phoneNumber, int customerId) {
-            super(name, adress, city, zip, birthday, email, phoneNumber);
+        public Customer(String name, String adress, String city, String zip, String birthday, String email, String password, String phoneNumber, int customerId) {
+            super(name, adress, city, zip, birthday, email, password, phoneNumber);
             this.customerId = customerId;
         }
 
@@ -73,8 +79,8 @@ package org.example;
 
         int adminId;
 
-        public Admin(String name, String adress, String city, String zip, String birthday, String email, String phoneNumber, int adminId) {
-            super(name, adress, city, zip, birthday, email, phoneNumber);
+        public Admin(String name, String adress, String city, String zip, String birthday, String email, String password, String phoneNumber, int adminId) {
+            super(name, adress, city, zip, birthday, email, password, phoneNumber);
             this.adminId = adminId;
         }
 

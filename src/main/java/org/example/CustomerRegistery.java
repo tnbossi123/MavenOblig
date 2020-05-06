@@ -7,10 +7,10 @@ public class CustomerRegistery {
 
     private ArrayList<Customer> customerArrayList = new ArrayList<>();
 
-    public void CustomerRegistery(String lblName, String lblAdress, String lblCity, String lblZip, String lblBirthday, String lblEmail, String lblPhoneNumber, int lblCustomerId) {
+    public void CustomerRegistery(String inName, String inAdress, String inCity, String inZip, String inBirthday, String inEmail, String inPassword, String inNumber, int lblCustomerId) {
 
 // Create a new Customer
-        Customer newCustomer = new Customer(lblName, lblAdress, lblCity, lblZip, lblBirthday, lblEmail, lblPhoneNumber, lblCustomerId);
+        Customer newCustomer = new Customer(inName, inAdress, inCity, inZip, inBirthday, inEmail, inPassword, inNumber, lblCustomerId);
 
         // Put in a array
         customerArrayList.add(newCustomer);

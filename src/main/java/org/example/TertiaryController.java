@@ -31,6 +31,10 @@ public class TertiaryController {
     private DatePicker inBirthday;
 
     @FXML
+    private TextField inPassword;
+
+
+    @FXML
     void btnRegister(ActionEvent event) {
 
     }
