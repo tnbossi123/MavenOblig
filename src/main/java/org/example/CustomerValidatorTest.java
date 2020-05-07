@@ -57,6 +57,7 @@ class CustomerValidatorTest {
 
 
     // Valid Password
+    // http://regexlib.com/REDetails.aspx?regexp_id=2062
 
     @Test
     void passwordValidator() {

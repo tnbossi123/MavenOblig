@@ -3,10 +3,12 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Calendar;
 
 public class TertiaryController {
 
@@ -68,6 +70,8 @@ public class TertiaryController {
             newCustomer.CustomerRegistery(name, adress, city, zip, birthday, email, password, phoneNumber);
 
         } catch (IllegalArgumentException e){
+            System.err.println("Error: " + e.getMessage());
+        } catch (RuntimeException e){
             System.err.println("Error: " + e.getMessage());
         }
 
