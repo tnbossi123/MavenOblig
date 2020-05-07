@@ -1,18 +1,20 @@
 package org.example;
 
-    public class Person {
+import java.time.LocalDate;
+
+public class Person {
         // Attributes
         String name;
         String adress;
         String city;
         String zip;
-        String birthday;
+        LocalDate birthday;
         String email;
         String password;
         String phoneNumber;
 
         // Constructors
-        public Person(String name, String adress, String city, String zip, String birthday, String email, String password, String phoneNumber){
+        public Person(String name, String adress, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber){
             this.name = name;
             this.adress = adress;
             this.city = city;
@@ -41,7 +43,7 @@ package org.example;
             return zip;
         }
 
-        public String getBirthday() {
+        public LocalDate getBirthday() {
             return birthday;
         }
 
@@ -62,16 +64,12 @@ package org.example;
 
     class Customer extends Person{
 
-        int customerId;
 
-        public Customer(String name, String adress, String city, String zip, String birthday, String email, String password, String phoneNumber, int customerId) {
+        public Customer(String name, String adress, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber) {
             super(name, adress, city, zip, birthday, email, password, phoneNumber);
-            this.customerId = customerId;
+
         }
 
-        public int getCustomerId() {
-            return customerId;
-        }
     }
 
 
@@ -79,7 +77,7 @@ package org.example;
 
         int adminId;
 
-        public Admin(String name, String adress, String city, String zip, String birthday, String email, String password, String phoneNumber, int adminId) {
+        public Admin(String name, String adress, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber, int adminId) {
             super(name, adress, city, zip, birthday, email, password, phoneNumber);
             this.adminId = adminId;
         }

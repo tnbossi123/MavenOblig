@@ -6,8 +6,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class TertiaryController {
+
+    CustomerRegistery newCustomer = new CustomerRegistery();
 
     @FXML
     private TextField inCity;
@@ -34,8 +37,40 @@ public class TertiaryController {
     private TextField inPassword;
 
 
+    // Register Form
     @FXML
     void btnRegister(ActionEvent event) {
+
+        String name = inName.getText();
+        String adress = inAdress.getText();
+        String city = inCity.getText();
+        String zip = inZip.getText();
+        LocalDate birthday = inBirthday.getValue();
+        String email = inEmail.getText();
+        String password = inPassword.getText();
+        String phoneNumber = inNumber.getText();
+
+        //Validating name, email, password, phonenumber
+        try {
+
+            //Name, IllegalarguemntException
+            CustomerValidator.nameValidator(name);
+
+            //email
+            CustomerValidator.emailValidator(email);
+
+            //password
+            CustomerValidator.passwordValidator(password);
+
+            //phonenumber
+            CustomerValidator.numberValidator(phoneNumber);
+
+            newCustomer.CustomerRegistery(name, adress, city, zip, birthday, email, password, phoneNumber);
+
+        } catch (IllegalArgumentException e){
+            System.err.println("Error: " + e.getMessage());
+        }
+
 
     }
 

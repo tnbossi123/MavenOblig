@@ -29,6 +29,7 @@ class CustomerValidatorTest {
     }
 
 
+    // Valid Email
 
     @Test
     void emailValidator(String emailV) {
@@ -52,6 +53,36 @@ class CustomerValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> emailValidator(" "));
 
     }
+
+
+
+    // Valid Password
+
+    @Test
+    void passwordValidator(String passwordV) {
+
+        passwordValidator("");
+        passwordValidator("");
+        passwordValidator("");
+    }
+
+    // Invalid Password
+
+    @Test
+    public void testInvalidPassword(){
+
+        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+
+    }
+
+
+    //Valid PhoneNumbers
 
     @Test
     void numberValidator(String numberV) {

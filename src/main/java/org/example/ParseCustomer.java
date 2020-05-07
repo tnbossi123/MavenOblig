@@ -1,5 +1,7 @@
 package org.example;
 
+import java.time.LocalDate;
+
 public class ParseCustomer {
 
 
@@ -17,20 +19,12 @@ public class ParseCustomer {
         String adress = strings[1];
         String city = strings[2];
         String zip = strings[3];
-        String birthday = strings[4];
+        LocalDate birthday = LocalDate.parse(strings[4]);
         String email = strings[5];
         String password = strings[6];
         String phoneNumber = strings[7];
-        int customerId;
 
-        try {
-            customerId = Integer.parseInt(strings[8]);
-        } catch (NumberFormatException e) {
-            throw new InvalidCustomerFormatException("Invalid id");
-        }
-
-
-        return new Customer(name, adress, city, zip, birthday, email, password, phoneNumber, customerId);
+        return new Customer(name, adress, city, zip, birthday, email, password, phoneNumber);
     }
 
 }

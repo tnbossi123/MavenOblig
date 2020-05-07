@@ -1,5 +1,6 @@
 package org.example;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CustomerRegistery {
@@ -7,15 +8,16 @@ public class CustomerRegistery {
 
     private ArrayList<Customer> customerArrayList = new ArrayList<>();
 
-    public void CustomerRegistery(String inName, String inAdress, String inCity, String inZip, String inBirthday, String inEmail, String inPassword, String inNumber, int lblCustomerId) {
+    public void CustomerRegistery(String inName, String inAdress, String inCity, String inZip, LocalDate inBirthday, String inEmail, String inPassword, String inNumber) {
 
 // Create a new Customer
-        Customer newCustomer = new Customer(inName, inAdress, inCity, inZip, inBirthday, inEmail, inPassword, inNumber, lblCustomerId);
+        Customer newCustomer = new Customer(inName, inAdress, inCity, inZip, inBirthday, inEmail, inPassword, inNumber);
 
         // Put in a array
         customerArrayList.add(newCustomer);
 
     }
+
 
 
     //Array gets made to a String

@@ -25,6 +25,17 @@ public class CustomerValidator {
 
     }
 
+    //Password
+    public static void passwordValidator(String passwordV){
+
+        if (!passwordV.matches("")){
+
+            throw new IllegalArgumentException("Unvalid Email");
+
+        }
+
+    }
+
     // Telephone numnber
     public static void numberValidator(String numberV){
 
