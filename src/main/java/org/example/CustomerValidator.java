@@ -28,9 +28,10 @@ public class CustomerValidator {
     //Password
     public static void passwordValidator(String passwordV){
 
-        if (!passwordV.matches("")){
+        if (!passwordV.matches(
+                "(?-i)(?=^.{7,}$)((?!.*\\s)(?=.*[A-Z])(?=.*[a-z]))((?=(.*\\d){1,})|(?=(.*\\W){1,}))^.*$")){
 
-            throw new IllegalArgumentException("Unvalid Email");
+            throw new IllegalArgumentException("Unvalid Password, must have at least 8 characters, at least 1 uppercase and 1 lowercase letter, at least 1 digit or 1 alphanumeric, no spaces");
 
         }
 

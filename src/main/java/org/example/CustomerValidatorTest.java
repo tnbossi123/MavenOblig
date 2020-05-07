@@ -7,24 +7,24 @@ import static org.junit.jupiter.api.Assertions.*;
 class CustomerValidatorTest {
 
     @Test
-    public void nameValidator(String nameV) {
-        nameValidator("Per");
-        nameValidator("Billy Bazyy");
-        nameValidator("Ørn Ærlingså");
+    public void nameValidator() {
+        org.example.CustomerValidator.nameValidator("Per");
+        org.example.CustomerValidator.nameValidator("Billy Bazyy");
+        org.example.CustomerValidator.nameValidator("Ørn Ærlingså");
     }
 
     // Invalid Names
     @Test
     public void testInvalidNavn(){
 
-        assertThrows(IllegalArgumentException.class, () -> nameValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> nameValidator(" "));
-        assertThrows(IllegalArgumentException.class, () -> nameValidator("123"));
-        assertThrows(IllegalArgumentException.class, () -> nameValidator("Blerton123"));
-        assertThrows(IllegalArgumentException.class, () -> nameValidator("123Blerton"));
-        assertThrows(IllegalArgumentException.class, () -> nameValidator("123Blerton123"));
-        assertThrows(IllegalArgumentException.class, () -> nameValidator("!Blerton"));
-        assertThrows(IllegalArgumentException.class, () -> nameValidator("@Blerton"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator(" "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator("123"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator("Blerton123"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator("123Blerton"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator("123Blerton123"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator("!Blerton"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.nameValidator("@Blerton"));
 
     }
 
@@ -32,11 +32,11 @@ class CustomerValidatorTest {
     // Valid Email
 
     @Test
-    void emailValidator(String emailV) {
+    void emailValidator() {
 
-        emailValidator("blerton.selami@oslomet.no");
-        emailValidator("example@example.com");
-        emailValidator("uk@domain.co.uk");
+        org.example.CustomerValidator.emailValidator("blerton.selami@oslomet.no");
+        org.example.CustomerValidator.emailValidator("example@example.com");
+        org.example.CustomerValidator.emailValidator("uk@domain.co.uk");
     }
 
     // Invalid Email
@@ -44,13 +44,13 @@ class CustomerValidatorTest {
     @Test
     public void testInvalidEmail(){
 
-        assertThrows(IllegalArgumentException.class, () -> emailValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> emailValidator("blerton.selami"));
-        assertThrows(IllegalArgumentException.class, () -> emailValidator("@oslomet.no"));
-        assertThrows(IllegalArgumentException.class, () -> emailValidator("blerton.selami@invalid"));
-        assertThrows(IllegalArgumentException.class, () -> emailValidator("test@"));
-        assertThrows(IllegalArgumentException.class, () -> emailValidator(";bot@evil.com"));
-        assertThrows(IllegalArgumentException.class, () -> emailValidator(" "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.emailValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.emailValidator("blerton.selami"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.emailValidator("@oslomet.no"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.emailValidator("blerton.selami@invalid"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.emailValidator("test@"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.emailValidator(";bot@evil.com"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.emailValidator(" "));
 
     }
 
@@ -59,11 +59,13 @@ class CustomerValidatorTest {
     // Valid Password
 
     @Test
-    void passwordValidator(String passwordV) {
+    void passwordValidator() {
 
-        passwordValidator("");
-        passwordValidator("");
-        passwordValidator("");
+        org.example.CustomerValidator.passwordValidator("a3dAbed5");
+        org.example.CustomerValidator.passwordValidator("P@ssword1");
+        org.example.CustomerValidator.passwordValidator("myPassw0rd!");
+        org.example.CustomerValidator.passwordValidator("aB_1bbbb");
+
     }
 
     // Invalid Password
@@ -71,13 +73,13 @@ class CustomerValidatorTest {
     @Test
     public void testInvalidPassword(){
 
-        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
-        assertThrows(IllegalArgumentException.class, () -> passwordValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.passwordValidator("password"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.passwordValidator("password12"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.passwordValidator("password__12"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.passwordValidator("p@ssword"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.passwordValidator("12345678"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.passwordValidator("Mypass1 "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.passwordValidator(" Password1_ "));
 
     }
 
@@ -85,22 +87,22 @@ class CustomerValidatorTest {
     //Valid PhoneNumbers
 
     @Test
-    void numberValidator(String numberV) {
+    void numberValidator() {
 
 
-        numberValidator("12233212");
-        numberValidator("+4712233212");
-        numberValidator("+47 12233212");
-        numberValidator("(+47)12233212");
-        numberValidator("(+47) 12233212");
-        numberValidator("(+47) 12 23 32 12");
-        numberValidator("07911 123456");
-        numberValidator("+44 7911 123456");
-        numberValidator("754-3010");
-        numberValidator("(541) 754-3010");
-        numberValidator("+1-541-754-3010");
-        numberValidator("1-541-754-3010");
-        numberValidator("001-541-754-3010");
+        org.example.CustomerValidator.numberValidator("12233212");
+        org.example.CustomerValidator.numberValidator("+4712233212");
+        org.example.CustomerValidator.numberValidator("+47 12233212");
+        org.example.CustomerValidator.numberValidator("(+47)12233212");
+        org.example.CustomerValidator.numberValidator("(+47) 12233212");
+        org.example.CustomerValidator.numberValidator("(+47) 12 23 32 12");
+        org.example.CustomerValidator.numberValidator("07911 123456");
+        org.example.CustomerValidator.numberValidator("+44 7911 123456");
+        org.example.CustomerValidator.numberValidator("754-3010");
+        org.example.CustomerValidator.numberValidator("(541) 754-3010");
+        org.example.CustomerValidator.numberValidator("+1-541-754-3010");
+        org.example.CustomerValidator.numberValidator("1-541-754-3010");
+        org.example.CustomerValidator.numberValidator("001-541-754-3010");
 
     }
 
