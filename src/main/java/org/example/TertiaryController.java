@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Window;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -39,6 +42,8 @@ public class TertiaryController {
 
     @FXML
     private TextField inPassword;
+
+    private Window PrimaryStage;
 
 
     // Register Form
