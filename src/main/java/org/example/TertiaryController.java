@@ -7,6 +7,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Calendar;
 
@@ -43,6 +45,7 @@ public class TertiaryController {
     @FXML
     void btnRegister(ActionEvent event) {
 
+        // Getting values
         String name = inName.getText();
         String adress = inAdress.getText();
         String city = inCity.getText();
@@ -51,6 +54,7 @@ public class TertiaryController {
         String email = inEmail.getText();
         String password = inPassword.getText();
         String phoneNumber = inNumber.getText();
+
 
         //Validating name, email, password, phonenumber
         try {
@@ -68,6 +72,20 @@ public class TertiaryController {
             CustomerValidator.numberValidator(phoneNumber);
 
             newCustomer.CustomerRegistery(name, adress, city, zip, birthday, email, password, phoneNumber);
+
+            // Wrtie to file //////////////////////////
+            // Path
+            Path path = Paths.get("customers.txt");
+            //Fromater
+            String formatert = CustomerFormatter.formatCustomers(newCustomer.getCustomerReg());
+            try {
+                CustomerWriter.writeString(path, formatert);
+                System.out.println("Customer is registered");
+            } catch (IOException e){
+                System.err.println("Something went wrong: " + e.getMessage());
+            }
+            ///////////////
+
 
         } catch (IllegalArgumentException e){
             System.err.println("Error: " + e.getMessage());

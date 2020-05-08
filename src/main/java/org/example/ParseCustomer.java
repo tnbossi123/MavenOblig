@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class ParseCustomer {
 
 
-    public static Customer ParseCustomer(String str) throws InvalidCustomerFormatException {
+    public static Customer parseCustomer(String str) throws InvalidCustomerFormatException {
 
         // Splits a string in parts with a DEKINITTER(seperator);
 

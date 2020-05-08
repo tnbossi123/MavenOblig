@@ -41,4 +41,11 @@ public class CustomerRegistery {
     }
 
 
+    // Get Customer reistery
+    public ArrayList<Customer> getCustomerReg(){
+        ArrayList<Customer> outPutArray = new ArrayList<>(customerArrayList);
+        return outPutArray;
+    }
+
+
 }
