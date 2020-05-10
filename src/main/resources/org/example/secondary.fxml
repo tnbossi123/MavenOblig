@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,9 +14,12 @@
    <children>
       <Button fx:id="secondaryButton" layoutX="14.0" layoutY="523.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="33.0" prefWidth="76.0" text="Go back" />
       <Label layoutX="120.0" layoutY="67.0" text="Type" />
-      <RadioButton fx:id="rbGas" layoutX="121.0" layoutY="90.0" mnemonicParsing="false" text="Gas" />
-      <RadioButton fx:id="rbElectrical" layoutX="121.0" layoutY="114.0" mnemonicParsing="false" text="Electrical" />
-      <RadioButton fx:id="rbHybrid" layoutX="121.0" layoutY="139.0" mnemonicParsing="false" text="Hybrid" />
+      <RadioButton fx:id="rbGas" layoutX="121.0" layoutY="90.0" mnemonicParsing="false" text="Gas">
+         <toggleGroup>
+            <ToggleGroup fx:id="fuelType" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rbElectrical" layoutX="121.0" layoutY="114.0" mnemonicParsing="false" text="Electrical" toggleGroup="$fuelType" />
+      <RadioButton fx:id="rbHybrid" layoutX="121.0" layoutY="139.0" mnemonicParsing="false" text="Hybrid" toggleGroup="$fuelType" />
       <ChoiceBox fx:id="cbColor" layoutX="454.0" layoutY="95.0" prefWidth="150.0" />
       <ChoiceBox fx:id="cbBrand" layoutX="130.0" layoutY="219.0" prefWidth="150.0" />
       <Label layoutX="28.0" layoutY="220.0" text="BRAND">
@@ -23,9 +27,12 @@
             <Font name="Helvetica" size="26.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rb14" layoutX="447.0" layoutY="202.0" mnemonicParsing="false" text="14 inch" />
-      <RadioButton fx:id="rb16" layoutX="447.0" layoutY="227.0" mnemonicParsing="false" text="16 inch" />
-      <RadioButton fx:id="rb19" layoutX="446.0" layoutY="250.0" mnemonicParsing="false" text="19 inch" />
+      <RadioButton fx:id="rb14" layoutX="447.0" layoutY="202.0" mnemonicParsing="false" text="14 inch">
+         <toggleGroup>
+            <ToggleGroup fx:id="tireSize" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rb16" layoutX="447.0" layoutY="227.0" mnemonicParsing="false" text="16 inch" toggleGroup="$tireSize" />
+      <RadioButton fx:id="rb19" layoutX="446.0" layoutY="250.0" mnemonicParsing="false" text="19 inch" toggleGroup="$tireSize" />
       <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="18.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../pics/gasoline-pump.png" />
