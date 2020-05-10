@@ -41,6 +41,9 @@ public class TertiaryController {
     private DatePicker inBirthday;
 
     @FXML
+    private TextField inCountry;
+
+    @FXML
     private TextField inPassword;
 
     private Window PrimaryStage;
@@ -53,6 +56,7 @@ public class TertiaryController {
         // Getting values
         String name = inName.getText();
         String adress = inAdress.getText();
+        String country = inCountry.getText();
         String city = inCity.getText();
         String zip = inZip.getText();
         LocalDate birthday = inBirthday.getValue();
@@ -67,6 +71,18 @@ public class TertiaryController {
             //Name, IllegalarguemntException
             CustomerValidator.nameValidator(name);
 
+            //Adress
+            CustomerValidator.adressValidator(adress);
+
+            //Country
+            CustomerValidator.countryValidator(country);
+
+            //City
+            CustomerValidator.cityValidator(city);
+
+            //Zip
+            CustomerValidator.zipValidator(zip);
+
             //email
             CustomerValidator.emailValidator(email);
 
@@ -76,7 +92,7 @@ public class TertiaryController {
             //phonenumber
             CustomerValidator.numberValidator(phoneNumber);
 
-            newCustomer.CustomerRegistery(name, adress, city, zip, birthday, email, password, phoneNumber);
+            newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
 
             // Wrtie to file //////////////////////////
             // Path

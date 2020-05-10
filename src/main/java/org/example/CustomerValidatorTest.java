@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerValidatorTest {
 
+    // Valid Names
     @Test
     public void nameValidator() {
         org.example.CustomerValidator.nameValidator("Per");
@@ -28,6 +29,93 @@ class CustomerValidatorTest {
 
     }
 
+    // Valid Country
+    @Test
+    public void countryValidator() {
+        org.example.CustomerValidator.countryValidator("Norway");
+        org.example.CustomerValidator.countryValidator("Lüneburg");
+        org.example.CustomerValidator.countryValidator("Czechoslovakia");
+    }
+
+    // Invalid Adress
+    @Test
+    public void testInvalidCountry(){
+
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.countryValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.countryValidator(" "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.countryValidator(" Norway"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.countryValidator("Norway "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.countryValidator("norway1"));
+
+    }
+
+
+    // Valid Adress
+    @Test
+    public void adressValidator() {
+        org.example.CustomerValidator.adressValidator("Linderudsletta 19");
+        org.example.CustomerValidator.adressValidator("Frognerveien 28A");
+        org.example.CustomerValidator.adressValidator("Veitvet 1a");
+    }
+
+    // Invalid Adress
+    @Test
+    public void testInvalidAdress(){
+
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.adressValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.adressValidator(" "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.adressValidator(";Linderudsletta@"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.adressValidator("Linderudsletta@"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.adressValidator(";Linderudsletta;19A"));
+
+    }
+
+    // Valid Adress
+    @Test
+    public void cityValidator() {
+        org.example.CustomerValidator.cityValidator("Bacau");
+        org.example.CustomerValidator.cityValidator("Balneario Camboriu");
+        org.example.CustomerValidator.cityValidator("Bandar-e Anzali");
+        org.example.CustomerValidator.cityValidator("Skopje");
+    }
+
+    // Invalid Adress
+    @Test
+    public void testInvalidCity(){
+
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.cityValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.cityValidator(" "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.cityValidator(" Chicago"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.cityValidator("Chigao-"));
+
+    }
+
+
+    // Valid Zip
+    @Test
+    public void zipValidator() {
+        org.example.CustomerValidator.zipValidator("0001");
+        org.example.CustomerValidator.zipValidator("0597");
+        org.example.CustomerValidator.zipValidator("9035");
+    }
+
+
+
+
+    // Invalid Zip
+    @Test
+    public void testInvalidZip(){
+
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator(""));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator(" "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator("    "));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator("abcd"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator("12345"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator("123"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator("ab12;"));
+        assertThrows(IllegalArgumentException.class, () -> org.example.CustomerValidator.zipValidator("ab;jgfssa"));
+
+    }
 
     // Valid Email
 

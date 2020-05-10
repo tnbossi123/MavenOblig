@@ -17,14 +17,15 @@ public class ParseCustomer {
 
         String name = strings[0];
         String adress = strings[1];
-        String city = strings[2];
-        String zip = strings[3];
-        LocalDate birthday = LocalDate.parse(strings[4]);
-        String email = strings[5];
-        String password = strings[6];
-        String phoneNumber = strings[7];
+        String country = strings[2];
+        String city = strings[3];
+        String zip = strings[4];
+        LocalDate birthday = LocalDate.parse(strings[5]);
+        String email = strings[6];
+        String password = strings[7];
+        String phoneNumber = strings[8];
 
-        return new Customer(name, adress, city, zip, birthday, email, password, phoneNumber);
+        return new Customer(name, adress, country, city, zip, birthday, email, password, phoneNumber);
     }
 
 }

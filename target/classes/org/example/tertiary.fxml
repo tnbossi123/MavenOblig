@@ -14,10 +14,10 @@
       <TextField fx:id="inZip" layoutX="280.0" layoutY="229.0" />
       <TextField fx:id="inEmail" layoutX="280.0" layoutY="293.0" />
       <TextField fx:id="inNumber" layoutX="280.0" layoutY="363.0" />
-      <TextField fx:id="inAdress" layoutX="280.0" layoutY="165.0" />
-      <TextField fx:id="inName" layoutX="280.0" layoutY="133.0" />
-      <Label layoutX="175.0" layoutY="137.0" text="Name" />
-      <Label layoutX="173.0" layoutY="169.0" text="Adress" />
+      <TextField fx:id="inAdress" layoutX="280.0" layoutY="130.0" />
+      <TextField fx:id="inName" layoutX="280.0" layoutY="100.0" />
+      <Label layoutX="175.0" layoutY="104.0" text="Name" />
+      <Label layoutX="174.0" layoutY="134.0" text="Adress" />
       <Label layoutX="175.0" layoutY="201.0" text="City" />
       <Label layoutX="177.0" layoutY="233.0" text="Zip" />
       <Label layoutX="174.0" layoutY="265.0" text="Birthday" />
@@ -25,7 +25,7 @@
       <Label layoutX="169.0" layoutY="367.0" text="Phone Number" />
       <Button layoutX="472.0" layoutY="229.0" mnemonicParsing="false" onAction="#btnRegister" text="Register" />
       <DatePicker fx:id="inBirthday" layoutX="273.0" layoutY="261.0" />
-      <Text layoutX="170.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User" wrappingWidth="286.39453125">
+      <Text layoutX="169.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User" wrappingWidth="286.39453125">
          <font>
             <Font size="48.0" />
          </font>
@@ -33,5 +33,7 @@
       <Button layoutX="472.0" layoutY="270.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="25.0" prefWidth="60.0" text="Back" />
       <Label layoutX="177.0" layoutY="331.0" text="Password" />
       <TextField fx:id="inPassword" layoutX="280.0" layoutY="327.0" />
+      <Label layoutX="173.0" layoutY="164.0" text="Country" />
+      <TextField fx:id="inCountry" layoutX="280.0" layoutY="160.0" />
    </children>
 </AnchorPane>

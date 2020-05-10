@@ -14,6 +14,51 @@ public class CustomerValidator {
         }
     }
 
+    //Country
+    public static void countryValidator(String countryV){
+
+
+        if (!countryV.matches("^[^\\s]+[a-zA-Z]{2,}+$")){
+
+            throw new IllegalArgumentException("Unvalid country");
+
+        }
+    }
+
+
+    // Adress
+    public static void adressValidator(String adressV){
+
+
+        if (!adressV.matches("^(.+) (\\d{1,3}[A-Z]?[a-z]?)")){
+
+            throw new IllegalArgumentException("Unvalid adress");
+
+        }
+    }
+
+    // City
+    public static void cityValidator(String cityV){
+
+
+        if (!cityV.matches("^[a-zA-Z]+(?:[\\s-][a-zA-Z]+)*$")){
+
+            throw new IllegalArgumentException("Unvalid City");
+
+        }
+    }
+
+    // Zip
+    public static void zipValidator(String zipV){
+
+
+        if (!zipV.matches("^\\d{4}$")){
+
+            throw new IllegalArgumentException("Unvalid zip");
+
+        }
+    }
+
     // Email
     public static void emailValidator(String emailV){
 

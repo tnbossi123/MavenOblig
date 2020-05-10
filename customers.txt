@@ -1,2 +1,19 @@
 Evert;linfdeubeibert123;Oslo;0000;2020-05-01;blerton-rustemi@hotmail.no;92066791;Blerton2011
 Blerton;Linderud;Oslo;0000;2020-05-07;blerton-rustemi@hotmial.no;92066791;Blerton2011
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Evert;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Evert;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Evert;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Evert;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Almie;Linderud;Norway;Oslo;0000;2020-05-12;blerton-rustemi@htomail.no;00000000;Blerton2011
+Admir;linderudlsetta;Norway;Oslo;0000;2020-05-19;blerton-rustemi@hotmail.no;00000000;Blerton2011

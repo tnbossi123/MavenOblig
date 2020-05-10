@@ -6,6 +6,7 @@ public class Person {
         // Attributes
         String name;
         String adress;
+        String country;
         String city;
         String zip;
         LocalDate birthday;
@@ -14,9 +15,10 @@ public class Person {
         String phoneNumber;
 
         // Constructors
-        public Person(String name, String adress, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber){
+        public Person(String name, String adress, String country, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber){
             this.name = name;
             this.adress = adress;
+            this.country = country;
             this.city = city;
             this.zip = zip;
             this.birthday = birthday;
@@ -38,6 +40,9 @@ public class Person {
             return city;
         }
 
+        public String getCountry() {
+        return country;
+    }
 
         public String getZip() {
             return zip;
@@ -65,8 +70,8 @@ public class Person {
     class Customer extends Person{
 
 
-        public Customer(String name, String adress, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber) {
-            super(name, adress, city, zip, birthday, email, password, phoneNumber);
+        public Customer(String name, String adress, String country, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber) {
+            super(name, adress, country, city, zip, birthday, email, password, phoneNumber);
 
         }
 
@@ -77,8 +82,8 @@ public class Person {
 
         int adminId;
 
-        public Admin(String name, String adress, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber, int adminId) {
-            super(name, adress, city, zip, birthday, email, password, phoneNumber);
+        public Admin(String name, String adress, String country, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber, int adminId) {
+            super(name, adress, country, city, zip, birthday, email, password, phoneNumber);
             this.adminId = adminId;
         }
 

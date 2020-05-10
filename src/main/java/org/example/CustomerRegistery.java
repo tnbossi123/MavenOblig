@@ -10,12 +10,12 @@ public class CustomerRegistery {
 
     private ArrayList<Customer> customerArrayList = new ArrayList<>();
 
-    public void CustomerRegistery(String inName, String inAdress, String inCity, String inZip, LocalDate inBirthday, String inEmail, String inPassword, String inNumber) throws RuntimeException {
+    public void CustomerRegistery(String inName, String inAdress, String inCountry, String inCity, String inZip, LocalDate inBirthday, String inEmail, String inPassword, String inNumber) throws RuntimeException {
 
         if (inBirthday != null) {
 
                 // Create a new Customer
-                Customer newCustomer = new Customer(inName, inAdress, inCity, inZip, inBirthday, inEmail, inPassword, inNumber);
+                Customer newCustomer = new Customer(inName, inAdress, inCountry, inCity, inZip, inBirthday, inEmail, inPassword, inNumber);
 
                 // Put in a array
                 customerArrayList.add(newCustomer);
