@@ -1,1 +1,2 @@
-Example;Linderud;Oslo;0000;2020-05-20;blerton-rustemi@hotmail.no;00000000;Blerton2011
+Evert;linfdeubeibert123;Oslo;0000;2020-05-01;blerton-rustemi@hotmail.no;92066791;Blerton2011
+Blerton;Linderud;Oslo;0000;2020-05-07;blerton-rustemi@hotmial.no;92066791;Blerton2011

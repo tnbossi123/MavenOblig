@@ -12,7 +12,7 @@ public class CustomerReader {
     public static List<Customer> readCustomer(Path path) throws IOException{
         ArrayList<Customer> customerList = new ArrayList<>();
 
-        try (var reader = Files.newBufferedReader(path)){
+        try (BufferedReader reader = Files.newBufferedReader(path)){
             String line;
 
             while ((line = reader.readLine()) != null) {
