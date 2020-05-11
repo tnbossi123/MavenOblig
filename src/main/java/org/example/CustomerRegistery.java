@@ -26,7 +26,7 @@ public class CustomerRegistery {
             try (Stream<String> stream = Files.lines(Paths.get("customers.txt"))) {
 
                 //this one finds the first one
-                //Optional<String> lineHavingTarget = stream.filter(l -> l.contains(inEmail)).findFirst();
+                Optional<String> lineHavingTarget = stream.filter(l -> l.contains(inEmail)).findFirst();
 
 
                 //this ine finds all and prints them
