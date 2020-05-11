@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -35,18 +36,20 @@
       <RadioButton fx:id="rb19" layoutX="446.0" layoutY="250.0" mnemonicParsing="false" text="19 inch" toggleGroup="$tireSize" />
       <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="18.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../pics/gasoline-pump.png" />
+            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/gasoline-pump.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="329.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../pics/color.png" />
+            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/color.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="329.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../pics/kisspng-car-rim-tire-wheel-automobile-repair-shop-alloy-wheel-5b26bc4baf4053.9539024515292652277178.png" />
+            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/rim.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnOrder" layoutX="502.0" layoutY="496.0" mnemonicParsing="false" onAction="#orderAction" text="Button" />
+      <TextArea fx:id="taSummary" layoutX="172.0" layoutY="326.0" prefHeight="200.0" prefWidth="310.0" />
    </children>
 </AnchorPane>
