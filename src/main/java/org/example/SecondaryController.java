@@ -108,6 +108,19 @@ public class SecondaryController implements Initializable {
         }
     }
 
+    @FXML
+    void resetAction(ActionEvent event) {
+        rbGas.setSelected(false);
+        rbElectrical.setSelected(false);
+        rbHybrid.setSelected(false);
+        cbColor.setValue(null);
+        cbBrand.setValue(null);
+        rb14.setSelected(false);
+        rb16.setSelected(false);
+        rb19.setSelected(false);
+        taSummary.setText(null);
+    }
+
 
 
 
