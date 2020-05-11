@@ -10,10 +10,13 @@ import javafx.stage.Window;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class TertiaryController {
 
@@ -92,12 +95,15 @@ public class TertiaryController {
             //phonenumber
             CustomerValidator.numberValidator(phoneNumber);
 
+            // Path where customers get registered
+            Path path = Paths.get("customers.txt");
+
+            // creates the new customer
             newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
 
             // Wrtie to file //////////////////////////
-            // Path
-            Path path = Paths.get("customers.txt");
             //Fromater
+
             String formatert = CustomerFormatter.formatCustomers(newCustomer.getCustomerReg());
             try {
                 CustomerWriter.writeString(path, formatert);
@@ -105,8 +111,8 @@ public class TertiaryController {
             } catch (IOException e){
                 System.err.println("Something went wrong: " + e.getMessage());
             }
-            ///////////////
 
+            ///////////////
 
         } catch (IllegalArgumentException e){
             System.err.println("Error: " + e.getMessage());
