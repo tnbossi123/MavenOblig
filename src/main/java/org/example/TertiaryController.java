@@ -101,18 +101,40 @@ public class TertiaryController {
             // creates the new customer
             newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
 
-            // Wrtie to file //////////////////////////
-            //Fromater
 
-            String formatert = CustomerFormatter.formatCustomers(newCustomer.getCustomerReg());
-            try {
-                CustomerWriter.writeString(path, formatert);
-                System.out.println("Customer is registered");
-            } catch (IOException e){
-                System.err.println("Something went wrong: " + e.getMessage());
+            try (Stream<String> stream = Files.lines(path)) {
+
+
+                //searcg all
+                Optional<String> lineHavingTarget = stream.filter(l -> l.contains(email)).findFirst();
+                // do whatever
+
+               if (lineHavingTarget.isPresent()){
+                    System.out.println("if");
+
+
+                }else {
+                    System.out.println("else");
+
+                   // Wrtie to file //////////////////////////
+                   //Fromater
+                   String formatert = CustomerFormatter.formatCustomers(newCustomer.getCustomerReg());
+                   try {
+                       System.out.println("try");
+
+                       CustomerWriter.writeString(path, formatert);
+                       System.out.println("Customer is registered");
+                   } catch (IOException e){
+                       System.err.println("Something went wrong: " + e.getMessage());
+                   }
+                }
+
+
+            } catch(IOException e){
+            System.out.println("The email you have entered allready excist, choose another email");
             }
 
-            ///////////////
+
 
         } catch (IllegalArgumentException e){
             System.err.println("Error: " + e.getMessage());

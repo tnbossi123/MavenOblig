@@ -17,3 +17,15 @@ Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no
 Ardian;Linderudsletta 19A;Norway;Oslo;0000;2020-05-06;Blerton-rustemi@hotmail.no;00000000;Blerton2011
 Almie;Linderud;Norway;Oslo;0000;2020-05-12;blerton-rustemi@htomail.no;00000000;Blerton2011
 Admir;linderudlsetta;Norway;Oslo;0000;2020-05-19;blerton-rustemi@hotmail.no;00000000;Blerton2011
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-04-30;Blerton-rustemi@hotmail.no;00000000;Blerton2011q
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-04-30;Blerton-rustemi@hotmail.no;00000000;Blerton2011q
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-04-30;Blerton-rustemi@hotmail.no;00000000;Blerton2011q
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-04-30;Blerton-rustemi@hotmail.no;00000000;Blerton2011q
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-04-30;Blerton-rustemi@hotmail.no;00000000;Blerton2011q
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-04-30;Blerton-rustemi@hotmail.no;00000000;Blerton2011q
+Blertin;Linderudsketta 19A;Norway;Oslo;0000;2020-05-14;Blerton-rustemi@hotmail.no;99999999;Blerton2011
+Apple;Californiastreet 19A;USA;Cali;0000;2020-05-15;applestore@apple.com;00000000;Apple123
+Apple;Californiastreet 19A;USA;Cali;0000;2020-05-15;applestore@apple.com;00000000;Apple123
+Apple;Californiastreet 19A;USA;Cali;0000;2020-05-15;Blerton-rustemi@hotmail.no;00000000;Apple123
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-05-12;Blerton-rustemi@hotmail.no;00000000;Blerton2011
+Blerton;Linderudsletta 19A;Norway;Oslo;0000;2020-05-12;shqipe@shqipe.com;00000000;Blerton2011
