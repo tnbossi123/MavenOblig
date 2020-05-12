@@ -110,18 +110,16 @@ public class TertiaryController {
                 // do whatever
 
                if (lineHavingTarget.isPresent()){
-                    System.out.println("if");
+                    System.out.println("The email you have choosen has allready been registered, use another email");
 
 
                 }else {
-                    System.out.println("else");
+                    System.out.println("The email is valid for use");
 
                    // Wrtie to file //////////////////////////
                    //Fromater
                    String formatert = CustomerFormatter.formatCustomers(newCustomer.getCustomerReg());
                    try {
-                       System.out.println("try");
-
                        CustomerWriter.writeString(path, formatert);
                        System.out.println("Customer is registered");
                    } catch (IOException e){
