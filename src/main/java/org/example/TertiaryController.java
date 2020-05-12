@@ -95,23 +95,18 @@ public class TertiaryController {
             // Path where customers get registered
             Path path = Paths.get("customers.txt");
 
-            // creates the new customer
-            newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
-
-
             try (Stream<String> stream = Files.lines(path)) {
-
 
                 //searcg all
                 Optional<String> lineHavingTarget = stream.filter(l -> l.contains(email)).findFirst();
                 // do whatever
 
-               if (lineHavingTarget.isPresent()){
-                    System.out.println("The email you have choosen has allready been registered, use another email");
+               if (!lineHavingTarget.isPresent()){
 
+                   System.out.println("The email is valid for use");
 
-                }else {
-                    System.out.println("The email is valid for use");
+                   // creates the new customer
+                   newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
 
                    // Wrtie to file //////////////////////////
                    //Fromater
@@ -119,9 +114,14 @@ public class TertiaryController {
                    try {
                        CustomerWriter.writeString(path, formatert);
                        System.out.println("Customer is registered");
+                       App.setRoot("secondary");
                    } catch (IOException e){
                        System.err.println("Something went wrong: " + e.getMessage());
                    }
+
+                }else {
+                   System.out.println("The email you have choosen has allready been registered, use another email");
+
                 }
 
 
