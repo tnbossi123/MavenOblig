@@ -32,7 +32,7 @@ public class CustomerValidator {
 
         if (!adressV.matches("^(.+) (\\d{1,3}[A-Z]?[a-z]?)")){
 
-            throw new IllegalArgumentException("Unvalid adress");
+            throw new IllegalArgumentException("Unvalid address");
 
         }
     }
@@ -43,7 +43,7 @@ public class CustomerValidator {
 
         if (!cityV.matches("^[a-zA-Z]+(?:[\\s-][a-zA-Z]+)*$")){
 
-            throw new IllegalArgumentException("Unvalid City");
+            throw new IllegalArgumentException("Unvalid city");
 
         }
     }

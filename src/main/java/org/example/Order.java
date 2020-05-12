@@ -7,13 +7,13 @@ public class Order {
     private int rim;
 
 
-    public int getQuantity() {
+    public int getRim() {
         return rim;
     }
 
 
-    public void setQuantity(int quantity) {
-        this.rim = quantity;
+    public void setRim(int rim) {
+        this.rim = rim;
     }
 
 

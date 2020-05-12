@@ -88,7 +88,7 @@ public class SecondaryController implements Initializable {
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice())
                     + " "  + "\n");
 
-        } else if (rbElectrical.isSelected()){
+        } else if (rbElectrical.isSelected() ){
             order.setType(2);
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(2000);
