@@ -23,34 +23,31 @@ public class TertiaryController {
     CustomerRegistery newCustomer = new CustomerRegistery();
 
     @FXML
+    private TextField inName;
+
+    @FXML
+    private TextField inAdress;
+
+    @FXML
+    private TextField inCountry;
+
+    @FXML
     private TextField inCity;
 
     @FXML
     private TextField inZip;
 
     @FXML
-    private TextField inEmail;
-
-    @FXML
-    private TextField inNumber;
-
-    @FXML
-    private TextField inAdress;
-
-    @FXML
-    private TextField inName;
-
-    @FXML
     private DatePicker inBirthday;
 
     @FXML
-    private TextField inCountry;
+    private TextField inEmail;
 
     @FXML
     private TextField inPassword;
 
-    private Window PrimaryStage;
-
+    @FXML
+    private TextField inNumber;
 
     // Register Form
     @FXML
