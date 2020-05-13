@@ -12,7 +12,7 @@ public class ParseCustomer {
         String[] strings = str.split(CustomerFormatter.DELIMITTER);
 
         if (strings.length != 7) {
-            throw new InvalidCustomerFormatException("Wrong use og speciall character");
+            throw new InvalidCustomerFormatException("Wrong use or special character");
         }
 
         String name = strings[0];

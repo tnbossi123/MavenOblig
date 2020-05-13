@@ -5,15 +5,16 @@ public class Order {
     private int color;
     private double price;
     private int rim;
+    private double colorprice;
 
 
-    public int getQuantity() {
+    public int getRim() {
         return rim;
     }
 
 
-    public void setQuantity(int quantity) {
-        this.rim = quantity;
+    public void setRim(int rim) {
+        this.rim = rim;
     }
 
 
@@ -24,6 +25,16 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
+
+    }
+
+    public double getColorprice() {
+        return colorprice;
+    }
+
+
+    public void setColorprice(double colorprice) {
+        this.price = colorprice;
 
     }
 

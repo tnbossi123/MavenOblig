@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Maven" />
+        <module name="MavenObligFinal" />
         <module name="MavenOblig" />
         <module name="HelloFX" />
       </profile>

@@ -23,34 +23,31 @@ public class TertiaryController {
     CustomerRegistery newCustomer = new CustomerRegistery();
 
     @FXML
+    private TextField inName;
+
+    @FXML
+    private TextField inAdress;
+
+    @FXML
+    private TextField inCountry;
+
+    @FXML
     private TextField inCity;
 
     @FXML
     private TextField inZip;
 
     @FXML
-    private TextField inEmail;
-
-    @FXML
-    private TextField inNumber;
-
-    @FXML
-    private TextField inAdress;
-
-    @FXML
-    private TextField inName;
-
-    @FXML
     private DatePicker inBirthday;
 
     @FXML
-    private TextField inCountry;
+    private TextField inEmail;
 
     @FXML
     private TextField inPassword;
 
-    private Window PrimaryStage;
-
+    @FXML
+    private TextField inNumber;
 
     // Register Form
     @FXML
@@ -98,21 +95,41 @@ public class TertiaryController {
             // Path where customers get registered
             Path path = Paths.get("customers.txt");
 
-            // creates the new customer
-            newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
+            try (Stream<String> stream = Files.lines(path)) {
 
-            // Wrtie to file //////////////////////////
-            //Fromater
+                //searcg all
+                Optional<String> lineHavingTarget = stream.filter(l -> l.contains(email)).findFirst();
+                // do whatever
 
-            String formatert = CustomerFormatter.formatCustomers(newCustomer.getCustomerReg());
-            try {
-                CustomerWriter.writeString(path, formatert);
-                System.out.println("Customer is registered");
-            } catch (IOException e){
-                System.err.println("Something went wrong: " + e.getMessage());
+               if (!lineHavingTarget.isPresent()){
+
+                   System.out.println("The email is valid for use");
+
+                   // creates the new customer
+                   newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
+
+                   // Wrtie to file //////////////////////////
+                   //Fromater
+                   String formatert = CustomerFormatter.formatCustomers(newCustomer.getCustomerReg());
+                   try {
+                       CustomerWriter.writeString(path, formatert);
+                       System.out.println("Customer is registered");
+                       App.setRoot("secondary");
+                   } catch (IOException e){
+                       System.err.println("Something went wrong: " + e.getMessage());
+                   }
+
+                }else {
+                   System.out.println("The email you have choosen has allready been registered, use another email");
+
+                }
+
+
+            } catch(IOException e){
+            System.out.println("The email you have entered allready excist, choose another email");
             }
 
-            ///////////////
+
 
         } catch (IllegalArgumentException e){
             System.err.println("Error: " + e.getMessage());

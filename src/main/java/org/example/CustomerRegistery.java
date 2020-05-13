@@ -23,27 +23,11 @@ public class CustomerRegistery {
 
         } else {
 
-            try (Stream<String> stream = Files.lines(Paths.get("customers.txt"))) {
-
-                //this one finds the first one
-                //Optional<String> lineHavingTarget = stream.filter(l -> l.contains(inEmail)).findFirst();
-
-
-                //this ine finds all and prints them
-                //stream.filter(l -> l.contains(inEmail)).forEach(System.out::println);
-
-
-                // do whatever
-
             // Create a new Customer
                 Customer newCustomer = new Customer(inName, inAdress, inCountry, inCity, inZip, inBirthday, inEmail, inPassword, inNumber);
 
                 // Put in a array
                 customerArrayList.add(newCustomer);
-
-            }catch(IOException e){
-                System.out.println("The email you have entered allready excist, choose another email");
-            }
 
         }
     }

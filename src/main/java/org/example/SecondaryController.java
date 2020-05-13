@@ -79,21 +79,35 @@ public class SecondaryController implements Initializable {
         Order order = new Order();
         DecimalFormat currency = new DecimalFormat("$,###.00");
 
+        if (rb14.isSelected()){
+            order.setRim(1);
+            order.setColorprice(300);
+
+        } else if (rb16.isSelected() ){
+            order.setRim(2);
+            order.setColorprice(2000);
+
+        }  else if (rb19.isSelected()){
+            order.setRim(3);
+            order.setColorprice(3000);
+
+        }
+
 
         if (rbGas.isSelected()){
             order.setType(1); // 1 for gas, 2 for electrical, 3 for hybrid
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(1000);
             taSummary.appendText(rbGas.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice())
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice() + order.getColorprice())
                     + " "  + "\n");
 
-        } else if (rbElectrical.isSelected()){
+        } else if (rbElectrical.isSelected() ){
             order.setType(2);
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(2000);
             taSummary.appendText(rbElectrical.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice())
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice() + order.getColorprice())
                     + " "  + "\n");
 
         } else if (rbHybrid.isSelected()){
@@ -101,12 +115,16 @@ public class SecondaryController implements Initializable {
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(3000);
             taSummary.appendText(rbHybrid.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice())
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice() + order.getColorprice())
                     + " "  + "\n");
         } else {
             taSummary.appendText("Choose the parts of your car build!\n");
         }
+
+
     }
+
+
 
     @FXML
     void resetAction(ActionEvent event) {
