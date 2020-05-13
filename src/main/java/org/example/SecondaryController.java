@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 
 
 public class SecondaryController implements Initializable {
@@ -79,6 +80,7 @@ public class SecondaryController implements Initializable {
         Order order = new Order();
         DecimalFormat currency = new DecimalFormat("$,###.00");
 
+
         if (rb14.isSelected()){
             order.setRim(1);
             order.setColorprice(300);
@@ -96,7 +98,7 @@ public class SecondaryController implements Initializable {
 
         if (rbGas.isSelected()){
             order.setType(1); // 1 for gas, 2 for electrical, 3 for hybrid
-            order.setColor(cbColor.getSelectionModel().getSelectedIndex());
+            order.getColor();
             order.setPrice(1000);
             taSummary.appendText(rbGas.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice() + order.getColorprice())
