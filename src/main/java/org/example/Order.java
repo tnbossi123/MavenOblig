@@ -2,8 +2,10 @@ package org.example;
 
 public class Order {
     private int type;
+    private int type2;
     private int color;
     private double price;
+    private double price2;
     private int rim;
     private double colorprice;
 
@@ -25,6 +27,16 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
+
+    }
+
+    public double getPrice2() {
+        return price2;
+    }
+
+
+    public void setPrice2(double price2) {
+        this.price2 = price2;
 
     }
 
@@ -57,6 +69,7 @@ public class Order {
     public void setType(int type) {
         this.type = type;
     }
+
 
 }
 

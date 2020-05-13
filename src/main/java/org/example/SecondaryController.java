@@ -79,17 +79,16 @@ public class SecondaryController implements Initializable {
         Order order = new Order();
         DecimalFormat currency = new DecimalFormat("$,###.00");
 
+
+
         if (rb14.isSelected()){
-            order.setRim(1);
-            order.setColorprice(300);
+            order.setPrice2(200);
 
         } else if (rb16.isSelected() ){
-            order.setRim(2);
-            order.setColorprice(2000);
+            order.setPrice2(400);
 
         }  else if (rb19.isSelected()){
-            order.setRim(3);
-            order.setColorprice(3000);
+            order.setPrice2(700);
 
         }
 
@@ -99,7 +98,9 @@ public class SecondaryController implements Initializable {
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(1000);
             taSummary.appendText(rbGas.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice() + order.getColorprice())
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
 
         } else if (rbElectrical.isSelected() ){
@@ -107,7 +108,9 @@ public class SecondaryController implements Initializable {
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(2000);
             taSummary.appendText(rbElectrical.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice() + order.getColorprice())
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
 
         } else if (rbHybrid.isSelected()){
@@ -115,7 +118,9 @@ public class SecondaryController implements Initializable {
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(3000);
             taSummary.appendText(rbHybrid.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +  currency.format(order.getPrice() + order.getColorprice())
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
         } else {
             taSummary.appendText("Choose the parts of your car build!\n");
