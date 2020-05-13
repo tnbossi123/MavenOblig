@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
+import java.util.Scanner;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -30,75 +31,55 @@ public class PrimaryController {
     @FXML
     void btnLogin(ActionEvent event) throws IOException {
 
+        // Logins (username and password)
+        String userName = loginUsername.getText();
+        String userPassword = loginPassword.getText();
 
-            String userName = loginUsername.getText();
-            String userPassword = loginPassword.getText();
+        // the different file paths
+        Path customerPath = Paths.get("customers.txt");
+        Path adminPath = Paths.get("admin.txt");
 
+        // Different scanners that will scan in their own path
+        final Scanner customerScanner = new Scanner(customerPath);
+        final Scanner adminScanner = new Scanner(adminPath);
 
-            Path customerPath = Paths.get("customers.txt");
-            Path adminPath = Paths.get("admin.txt");
+        try{
 
-            // Customer login
-        // jeg tror denne setningen her må forandres på
-            try (Stream<String> CustomerStream = Files.lines(customerPath)){
-                // Search all
+            // Chekcs if the username is a valid email adress
+            CustomerValidator.emailValidator(userName);
 
-                //Måten å gjøre dette på er med supplier
-              // Supplier<Stream<String>> userNameSupplier = () -> CustomerStream.filter(l -> l.contains(userName));
-               //Supplier<Stream<String>> passwordSupplier = () -> CustomerStream.filter(l -> l.contains(userPassword));
-
-
-               Optional<String> userNameTarget = CustomerStream.filter(l -> l.contains(userName)).findFirst();
-               Optional<String> userPasswordTarget = CustomerStream.filter(l -> l.contains(userPassword)).findFirst();
-
-                // Checking if these targets match to login as customer
-
-                if (userNameTarget.isPresent() && userPasswordTarget.isPresent()){
-
-                    System.out.println(userName + ", have succsessfully loged in");
-
+            // chekcs the customer file first to seee if the user excists there
+            while (customerScanner.hasNextLine()){
+                final String customerLineFromFile = customerScanner.nextLine();
+                if (customerLineFromFile.contains(userName) && customerLineFromFile.contains(userPassword)){
+                    System.out.println("Customer: Congrats mothafucka " + userName + " u have logged in");
+                    // Sends customer to the customer page
                     App.setRoot("secondary");
-
-                }else{
-                    System.out.println("The email/password choosen does either not exist or is typed wrong");
+                    break;
+                } else{
+                    System.out.println("Customer: Either ur Username or password is wrong");
                 }
-
-            } catch (IOException e){
-                System.err.println("Error: " + e.getMessage());
             }
 
-
-
-
-/*
-            // Admin login
-            try (Stream<String> AdminStream = Files.lines(adminPath)){
-                // Search all
-                Optional<String> userNameTarget = AdminStream.filter(l -> l.contains(userName)).findFirst();
-                Optional<String> userPasswordTarget = AdminStream.filter(l -> l.contains(userPassword)).findFirst();
-
-                // Checking if these targets match to login as customer
-
-                if (userNameTarget.isPresent() && userPasswordTarget.isPresent()){
-
-                    System.out.println(userName + ", Welcome Admin");
-
+            // Checks then the admin file too see if the user exists there
+            while (adminScanner.hasNextLine()){
+                final String adminLineFromFile = adminScanner.nextLine();
+                if (adminLineFromFile.contains(userName) && adminLineFromFile.contains(userPassword)){
+                    System.out.println("Admin: Congrats mothafucking " + userName + " u have logged in");
+                    // Sends admin to the admin page
                     App.setRoot("quaternary");
-
-                }else{
-                    System.out.println("The email/password choosen does either not exist or is typed wrong");
+                    break;
+                } else {
+                    System.out.println("Admin: Either ur Username or password is wrong");
                 }
 
-            } catch (IOException e){
-                System.err.println("Error: " + e.getMessage());
-            }catch (RuntimeException e){
-                System.err.println("problem på admin");
             }
 
- */
-
-
-
+        }
+        // If the username failed, you will get this message
+        catch (IllegalArgumentException e) {
+            System.err.println("valid username is only yout email");
+        }
 
 
     }
