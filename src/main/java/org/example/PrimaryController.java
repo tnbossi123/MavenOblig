@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -27,6 +28,11 @@ public class PrimaryController {
 
     @FXML
     private Button primaryButton;
+
+    @FXML
+    private Label label;
+
+
 
     @FXML
     void btnLogin(ActionEvent event) throws IOException {
@@ -58,6 +64,7 @@ public class PrimaryController {
                     break;
                 } else{
                     System.out.println("Customer: Either ur Username or password is wrong");
+                    label.setText("Incorrect Email or password.");
                 }
             }
 
@@ -78,7 +85,7 @@ public class PrimaryController {
         }
         // If the username failed, you will get this message
         catch (IllegalArgumentException e) {
-            System.err.println("valid username is only yout email");
+            System.err.println("Valid username is only your email");
         }
 
 
