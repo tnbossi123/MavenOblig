@@ -6,6 +6,8 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -35,5 +37,10 @@
       <Button fx:id="btnReset" layoutX="502.0" layoutY="496.0" mnemonicParsing="false" onAction="#resetAction" text="Reset" />
       <ComboBox fx:id="cbBrand" layoutX="142.0" layoutY="231.0" prefWidth="150.0" />
       <ComboBox fx:id="cbColor" layoutX="447.0" layoutY="102.0" prefWidth="150.0" />
+      <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="217.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../pics/gas.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
