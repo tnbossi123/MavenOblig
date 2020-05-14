@@ -79,6 +79,7 @@ public class PrimaryController {
                     break;
                 } else {
                     System.out.println("Admin: Either ur Username or password is wrong");
+                    label.setText("Invalid Email or password");
                 }
 
             }

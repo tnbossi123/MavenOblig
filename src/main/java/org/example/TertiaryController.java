@@ -38,7 +38,11 @@ public class TertiaryController {
     private TextField inZip;
 
     @FXML
-    private DatePicker inBirthday;
+    private TextField inDay;
+    @FXML
+    private TextField inMonth;
+    @FXML
+    private TextField inYear;
 
     @FXML
     private TextField inEmail;
@@ -59,7 +63,9 @@ public class TertiaryController {
         String country = inCountry.getText();
         String city = inCity.getText();
         String zip = inZip.getText();
-        LocalDate birthday = inBirthday.getValue();
+        String day = inDay.getText();
+        String month = inMonth.getText();
+        String year = inYear.getText();
         String email = inEmail.getText();
         String password = inPassword.getText();
         String phoneNumber = inNumber.getText();
@@ -106,7 +112,7 @@ public class TertiaryController {
                    System.out.println("The email is valid for use");
 
                    // creates the new customer
-                   newCustomer.CustomerRegistery(name, adress, country, city, zip, birthday, email, password, phoneNumber);
+                   newCustomer.CustomerRegistery(name, adress, country, city, zip, day, month, year, email, password, phoneNumber);
 
                    // Wrtie to file //////////////////////////
                    //Fromater

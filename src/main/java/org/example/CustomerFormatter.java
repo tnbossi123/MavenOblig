@@ -8,7 +8,9 @@ public class CustomerFormatter {
     public static String DELIMITTER = ";";
 
     public static String formatCustomer(Customer c){
-        return c.getName() + DELIMITTER + c.getAdress() + DELIMITTER + c.getCountry() + DELIMITTER + c.getCity() + DELIMITTER + c.getZip() + DELIMITTER + c.getBirthday() + DELIMITTER + c.getEmail() + DELIMITTER + c.getPhoneNumber() + DELIMITTER + c.getPassword();
+        return c.getName() + DELIMITTER + c.getAdress() + DELIMITTER + c.getCountry() + DELIMITTER + c.getCity()
+                + DELIMITTER + c.getZip() + DELIMITTER + c.getDay() + DELIMITTER + c.getMonth() + DELIMITTER
+                + c.getYear() + DELIMITTER + c.getEmail() + DELIMITTER + c.getPhoneNumber() + DELIMITTER + c.getPassword();
     }
 
     public static String formatCustomers(List<Customer> clist){

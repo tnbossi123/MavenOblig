@@ -12,3 +12,5 @@ A;a 223;Ssda;Sd;1234;2020-05-03;sadsa@gmail.com;12341121;A12312321s
 Ardian;A 23;Olss;Osada;2123;2020-05-04;a2@gmail.com;12345678;Aa12345678
 Ardian;Helgesens gate 84;Norway;Oslo;1234;2020-04-27;ardian@gmail.com;12345678;Ardian123
 Ardian;Helgesens gate 84;Holland;Action;1234;2020-05-04;asif123@gmail.com;12345678;Asif123
+Ardian;Helgesens 21;Norge;Oslo;2123;2020-04-26;a@g.com;12341234;Ardian123
+Ardian;Hewl 23;Asdsad;Adsada;1234;1;1;2000;abc@a.com;12345678;Ard12345

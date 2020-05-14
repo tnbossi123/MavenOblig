@@ -20,12 +20,14 @@ public class ParseCustomer {
         String country = strings[2];
         String city = strings[3];
         String zip = strings[4];
-        LocalDate birthday = LocalDate.parse(strings[5]);
-        String email = strings[6];
-        String password = strings[7];
-        String phoneNumber = strings[8];
+        String day = strings[5];
+        String month = strings[6];
+        String year = strings[7];
+        String email = strings[8];
+        String password = strings[9];
+        String phoneNumber = strings[10];
 
-        return new Customer(name, adress, country, city, zip, birthday, email, password, phoneNumber);
+        return new Customer(name, adress, country, city, zip, day, month, year, email, password, phoneNumber);
     }
 
 }
