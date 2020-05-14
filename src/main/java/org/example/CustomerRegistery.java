@@ -15,16 +15,16 @@ public class CustomerRegistery {
 
     private ArrayList<Customer> customerArrayList = new ArrayList<>();
 
-    public void CustomerRegistery(String inName, String inAdress, String inCountry, String inCity, String inZip, LocalDate inBirthday, String inEmail, String inPassword, String inNumber) throws RuntimeException {
+    public void CustomerRegistery(String inName, String inAdress, String inCountry, String inCity, String inZip, String inDay, String inMonth, String inYear, String inEmail, String inPassword, String inNumber) throws RuntimeException {
 
-        if (inBirthday == null) {
+        if (inYear == null) {
 
             throw new RuntimeException("You have not chosen a birthday");
 
         } else {
 
             // Create a new Customer
-                Customer newCustomer = new Customer(inName, inAdress, inCountry, inCity, inZip, inBirthday, inEmail, inPassword, inNumber);
+                Customer newCustomer = new Customer(inName, inAdress, inCountry, inCity, inZip, inDay, inMonth, inYear, inEmail, inPassword, inNumber);
 
                 // Put in a array
                 customerArrayList.add(newCustomer);

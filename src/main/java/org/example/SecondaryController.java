@@ -9,12 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 
 
 public class SecondaryController implements Initializable {
@@ -38,14 +34,15 @@ public class SecondaryController implements Initializable {
     private RadioButton rbHybrid;
 
     @FXML
-    private ChoiceBox<String> cbColor;
+    private ComboBox<String> cbBrand;
+    private final String[] brand = {"BMW", "Mercedes-Benz", "Audi"};
+    private final ObservableList<String> brandList = FXCollections.observableArrayList(brand);
+
+    @FXML
+    private ComboBox<String> cbColor;
     private final String[] color = {"Red", "White", "Black"};
     private final ObservableList<String> colorList = FXCollections.observableArrayList(color);
 
-    @FXML
-    private ChoiceBox<String> cbBrand;
-    private final String[] brand = {"BMW", "Mercedes-Benz", "Audi"};
-    private final ObservableList<String> brandList = FXCollections.observableArrayList(brand);
 
 
     @FXML

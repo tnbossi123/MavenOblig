@@ -9,19 +9,23 @@ public class Person {
         String country;
         String city;
         String zip;
-        LocalDate birthday;
+        String day;
+        String month;
+        String year;
         String email;
         String password;
         String phoneNumber;
 
         // Constructors
-        public Person(String name, String adress, String country, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber){
+        public Person(String name, String adress, String country, String city, String zip, String day, String month, String year, String email, String password, String phoneNumber){
             this.name = name;
             this.adress = adress;
             this.country = country;
             this.city = city;
             this.zip = zip;
-            this.birthday = birthday;
+            this.day = day;
+            this.month = month;
+            this.year = year;
             this.email = email;
             this.password = password;
             this.phoneNumber = phoneNumber;
@@ -48,9 +52,15 @@ public class Person {
             return zip;
         }
 
-        public LocalDate getBirthday() {
-            return birthday;
-        }
+        public String getDay() {
+        return day;
+    }
+        public String getMonth() {
+        return month;
+    }
+        public String getYear() {
+        return year;
+    }
 
         public String getEmail() {
             return email;
@@ -70,8 +80,8 @@ public class Person {
     class Customer extends Person{
 
 
-        public Customer(String name, String adress, String country, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber) {
-            super(name, adress, country, city, zip, birthday, email, password, phoneNumber);
+        public Customer(String name, String adress, String country, String city, String zip ,String day, String  month, String year , String email, String password, String phoneNumber) {
+            super(name, adress, country, city, zip, day, month, year, email, password, phoneNumber);
 
         }
 
@@ -82,8 +92,8 @@ public class Person {
 
         int adminId;
 
-        public Admin(String name, String adress, String country, String city, String zip, LocalDate birthday, String email, String password, String phoneNumber, int adminId) {
-            super(name, adress, country, city, zip, birthday, email, password, phoneNumber);
+        public Admin(String name, String adress, String country, String city, String zip ,String day, String  month, String year , String email, String password, String phoneNumber) {
+            super(name, adress, country, city, zip, day, month, year, email, password, phoneNumber);
             this.adminId = adminId;
         }
 
