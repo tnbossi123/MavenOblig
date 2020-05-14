@@ -28,7 +28,7 @@
       <TextField id="name" layoutX="189.0" layoutY="113.0" />
       <TextField id="name" layoutX="189.0" layoutY="168.0" />
       <Button layoutX="189.0" layoutY="231.0" onAction="#registerBtnClicked" text="Add product" />
-      <TableView fx:id="tableView" editable="true" layoutX="23.0" layoutY="388.0" prefHeight="394.0" prefWidth="551.0">
+      <TableView fx:id="tableView" editable="true" layoutX="23.0" layoutY="388.0" prefHeight="404.0" prefWidth="551.0">
          <columns>
             <TableColumn fx:id="birthDayColumn" minWidth="90" onEditCommit="#birthDayEdited" prefWidth="274.0" text="Order">
                <cellValueFactory>
