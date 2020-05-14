@@ -9,8 +9,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 
 
 public class SecondaryController implements Initializable {
@@ -58,6 +62,7 @@ public class SecondaryController implements Initializable {
 
     @FXML
     private Button secondaryButton;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
