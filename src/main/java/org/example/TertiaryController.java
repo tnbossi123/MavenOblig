@@ -120,13 +120,13 @@ public class TertiaryController {
                    }
 
                 }else {
-                   System.out.println("The email you have choosen has allready been registered, use another email");
+                   System.out.println("The email you have chosen has already been registered, use another Email");
 
                 }
 
 
             } catch(IOException e){
-            System.out.println("The email you have entered allready excist, choose another email");
+            System.out.println("The email you have entered already exists, choose another Email");
             }
 
 

@@ -14,7 +14,7 @@
             <Font name="Bernard MT Condensed" size="60.0" />
          </font>
       </Text>
-      <TextField fx:id="loginUsername" layoutX="226.0" layoutY="188.0" promptText="Username" />
+      <TextField fx:id="loginUsername" layoutX="226.0" layoutY="188.0" promptText="Email" />
       <PasswordField fx:id="loginPassword" layoutX="226.0" layoutY="235.0" promptText="Password" />
       <Button layoutX="273.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="25.0" prefWidth="60.0" text="Login" />
       <Button fx:id="primaryButton" layoutX="274.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToTertiary" text="Register" />

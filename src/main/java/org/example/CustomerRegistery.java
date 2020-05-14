@@ -19,7 +19,7 @@ public class CustomerRegistery {
 
         if (inBirthday == null) {
 
-            throw new RuntimeException("You have not choosen a birthday");
+            throw new RuntimeException("You have not chosen a birthday");
 
         } else {
 

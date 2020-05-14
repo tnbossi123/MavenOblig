@@ -36,17 +36,17 @@
       <RadioButton fx:id="rb19" layoutX="446.0" layoutY="250.0" mnemonicParsing="false" text="19 inch" toggleGroup="$tireSize" />
       <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="18.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/gasoline-pump.png" />
+            <Image url="@../../../../pics/gasoline-pump.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="329.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/color.png" />
+            <Image url="@../../../../pics/color.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="329.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/rim.png" />
+            <Image url="@../../../../pics/rim.png" />
          </image>
       </ImageView>
       <Button fx:id="btnOrder" layoutX="502.0" layoutY="452.0" mnemonicParsing="false" onAction="#orderAction" text="Order" />
