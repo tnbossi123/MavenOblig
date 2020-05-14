@@ -1,6 +1,9 @@
 package org.example;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
@@ -71,9 +74,13 @@ public class SecondaryController implements Initializable {
     private ImageView image1;
 
     @FXML
-    void orderAction(ActionEvent event) {
+    void orderAction(ActionEvent event) throws FileNotFoundException {
         Order order = new Order();
         DecimalFormat currency = new DecimalFormat("$,###.00");
+
+        //Saving previous user's order(s)
+        PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
+        System.setOut(out);
 
 
 
@@ -93,11 +100,19 @@ public class SecondaryController implements Initializable {
             order.setType(1); // 1 for gas, 2 for electrical, 3 for hybrid
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(1000);
+
+            System.out.println(rbGas.getText() + " "
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
+                    + " "  + "\n");
+
             taSummary.appendText(rbGas.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
+
 
         } else if (rbElectrical.isSelected() ){
             order.setType(2);
