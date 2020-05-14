@@ -29,6 +29,7 @@ public class PrimaryController {
     @FXML
     private Button primaryButton;
 
+    //label popup
     @FXML
     private Label label;
 
