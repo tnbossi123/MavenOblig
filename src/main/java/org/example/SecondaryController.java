@@ -15,14 +15,6 @@ import javafx.scene.image.ImageView;
 
 public class SecondaryController implements Initializable {
 
-    @FXML
-    private ImageView ivGas;
-
-    @FXML
-    private ImageView ivColor;
-
-    @FXML
-    private ImageView ivWheel;
 
     @FXML
     private RadioButton rbGas;
@@ -75,6 +67,8 @@ public class SecondaryController implements Initializable {
     @FXML
     private TextArea taSummary;
 
+    @FXML
+    private ImageView image1;
 
     @FXML
     void orderAction(ActionEvent event) {
