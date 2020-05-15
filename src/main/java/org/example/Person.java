@@ -9,15 +9,15 @@ public class Person {
         String country;
         String city;
         String zip;
-        String day;
-        String month;
-        String year;
+        int day;
+        int month;
+        int year;
         String email;
         String password;
         String phoneNumber;
 
         // Constructors
-        public Person(String name, String adress, String country, String city, String zip, String day, String month, String year, String email, String password, String phoneNumber){
+        public Person(String name, String adress, String country, String city, String zip, int day, int month, int year, String email, String password, String phoneNumber){
             this.name = name;
             this.adress = adress;
             this.country = country;
@@ -52,13 +52,13 @@ public class Person {
             return zip;
         }
 
-        public String getDay() {
+        public int getDay() {
         return day;
     }
-        public String getMonth() {
+        public int getMonth() {
         return month;
     }
-        public String getYear() {
+        public int getYear() {
         return year;
     }
 
@@ -80,28 +80,10 @@ public class Person {
     class Customer extends Person{
 
 
-        public Customer(String name, String adress, String country, String city, String zip ,String day, String  month, String year , String email, String password, String phoneNumber) {
+        public Customer(String name, String adress, String country, String city, String zip ,int day, int  month, int year , String email, String password, String phoneNumber) {
             super(name, adress, country, city, zip, day, month, year, email, password, phoneNumber);
 
         }
 
     }
-
-
-    class Admin extends Person{
-
-        int adminId;
-
-        public Admin(String name, String adress, String country, String city, String zip ,String day, String  month, String year , String email, String password, String phoneNumber) {
-            super(name, adress, country, city, zip, day, month, year, email, password, phoneNumber);
-            this.adminId = adminId;
-        }
-
-        public int getAdminId() {
-            return adminId;
-        }
-    }
-
-// Needs a toString()
-
 

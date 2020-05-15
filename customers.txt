@@ -16,3 +16,4 @@ Ardian;Helgesens 21;Norge;Oslo;2123;2020-04-26;a@g.com;12341234;Ardian123
 Ardian;Hewl 23;Asdsad;Adsada;1234;1;1;2000;abc@a.com;12345678;Ard12345
 Blerton;Linderudsletta 19A;Norway;Oslo;0000;;;;tnbossi123123@me.com;92066791;Blerton2011
 Ardian;Adsadas 21;Norway;Oslo;1234;444;44;444;Ardian@gmail.com;12341234;Adsada21312
+Blerton;Linderudsletta 19S;Norway;Oslo;0000;;;;testets@me.com;920669791;Blerton2011

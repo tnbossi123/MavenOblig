@@ -20,13 +20,25 @@ public class ParseCustomer {
         String country = strings[2];
         String city = strings[3];
         String zip = strings[4];
-        String day = strings[5];
-        String month = strings[6];
-        String year = strings[7];
+        int day;
+        int month;
+        int year;
+
+        // Testing the numbers if they are numbers
+        try {
+            day = Integer.parseInt(strings[5]);
+            month = Integer.parseInt(strings[6]);
+            year = Integer.parseInt(strings[7]);
+        } catch(NumberFormatException e){
+            // If not numbers throw exception
+            throw new NumberFormatException("You have not written a valid date/month/year");
+
+        }
         String email = strings[8];
         String password = strings[9];
         String phoneNumber = strings[10];
 
+        // If all goes well returing customer
         return new Customer(name, adress, country, city, zip, day, month, year, email, password, phoneNumber);
     }
 

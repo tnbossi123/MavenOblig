@@ -11,7 +11,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="687.0" style="-fx-background-color: #3D485F#3D485F #3D485F#3D485F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SecondaryController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="700" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #3D485F#3D485F #3D485F#3D485F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SecondaryController">
    <children>
       <Button fx:id="secondaryButton" layoutX="14.0" layoutY="523.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="33.0" prefWidth="76.0" text="Go back" />
       <Label layoutX="120.0" layoutY="67.0" text="Type" />

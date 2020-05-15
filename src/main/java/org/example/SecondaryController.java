@@ -1,11 +1,10 @@
 package org.example;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,14 +28,42 @@ public class SecondaryController implements Initializable {
     private RadioButton rbHybrid;
 
     @FXML
-    private ComboBox<String> cbBrand;
-    private final String[] brand = {"BMW", "Mercedes-Benz", "Audi"};
-    private final ObservableList<String> brandList = FXCollections.observableArrayList(brand);
+    private ComboBox<String> brandSelector;
 
     @FXML
     private ComboBox<String> cbColor;
-    private final String[] color = {"Red", "White", "Black"};
+    private final String[] color = {"red", "white"};
     private final ObservableList<String> colorList = FXCollections.observableArrayList(color);
+
+    @FXML
+    public void initialize() throws IOException{
+
+
+        // Reading items from txt file
+
+        BufferedReader brandRead = new BufferedReader(new FileReader("brands.txt"));
+
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = brandRead.readLine();
+
+            while (line != null){
+
+                brandSelector.getItems().addAll(line);
+
+                sb.append(line);
+                line = brandRead.readLine();
+            }
+        } finally {
+            brandRead.close();
+            System.out.println(brandSelector);
+
+        }
+
+        brandSelector.getSelectionModel().select(0);
+
+    }
+
 
 
 
@@ -59,10 +86,15 @@ public class SecondaryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // initialize the lists
+
+
         cbColor.setItems(colorList);
-        cbBrand.setItems(brandList);
+
+
 
     }
+
+
 
     @FXML
     private Button btnOrder;
@@ -72,6 +104,7 @@ public class SecondaryController implements Initializable {
 
     @FXML
     private ImageView image1;
+
 
     @FXML
     void orderAction(ActionEvent event) throws FileNotFoundException {
@@ -103,13 +136,13 @@ public class SecondaryController implements Initializable {
 
             //PrintStream, writes info on the last order of the last buyer to output.txt
             System.out.println(rbGas.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                     + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
 
             taSummary.appendText(rbGas.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                     + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
@@ -121,13 +154,12 @@ public class SecondaryController implements Initializable {
             order.setPrice(2000);
 
             //output.txt
-            System.out.println(rbElectrical.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+            System.out.println(rbElectrical.getText() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
             taSummary.appendText(rbElectrical.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                     + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
@@ -139,13 +171,13 @@ public class SecondaryController implements Initializable {
 
             //output.txt
             System.out.println(rbHybrid.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                     + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
 
             taSummary.appendText(rbHybrid.getText() + " "
-                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                     + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
@@ -157,6 +189,8 @@ public class SecondaryController implements Initializable {
     }
 
 
+
+
 //Reset button for all values
     @FXML
     void resetAction(ActionEvent event) {
@@ -164,7 +198,7 @@ public class SecondaryController implements Initializable {
         rbElectrical.setSelected(false);
         rbHybrid.setSelected(false);
         cbColor.setValue(null);
-        cbBrand.setValue(null);
+
         rb14.setSelected(false);
         rb16.setSelected(false);
         rb19.setSelected(false);
@@ -173,12 +207,10 @@ public class SecondaryController implements Initializable {
 
 
 
-
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
     }
-
 
 
 }

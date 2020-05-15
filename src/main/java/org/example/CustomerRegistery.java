@@ -1,13 +1,6 @@
 package org.example;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 
 public class CustomerRegistery {
@@ -15,11 +8,22 @@ public class CustomerRegistery {
 
     private ArrayList<Customer> customerArrayList = new ArrayList<>();
 
-    public void CustomerRegistery(String inName, String inAdress, String inCountry, String inCity, String inZip, String inDay, String inMonth, String inYear, String inEmail, String inPassword, String inNumber) throws RuntimeException {
+    public void CustomerRegistery(String inName, String inAdress, String inCountry, String inCity, String inZip, int inDay, int inMonth, int inYear, String inEmail, String inPassword, String inNumber) throws InvalidDateException {
 
-        if (inYear == null) {
+        if (inDay < 1 || inDay > 31) {
 
-            throw new RuntimeException("You have not chosen a birthday");
+            // throws exception if the date is wrong
+            throw new InvalidDateException("You have chosen a unvalid date (1-31)");
+
+        } else if(inMonth < 1 || inMonth > 12){
+
+            // throws exception if the month is wrong
+            throw new InvalidDateException("You have chosen a unvalid month(1-12)");
+
+        } else if (inYear < 1900 || inYear > 2020){
+
+            // throws exception if the year is wrong
+            throw new InvalidDateException("You have chosen a unvalid year (1900-2020)");
 
         } else {
 

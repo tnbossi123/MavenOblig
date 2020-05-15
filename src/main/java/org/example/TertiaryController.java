@@ -63,9 +63,9 @@ public class TertiaryController {
         String country = inCountry.getText();
         String city = inCity.getText();
         String zip = inZip.getText();
-        String day = inDay.getText();
-        String month = inMonth.getText();
-        String year = inYear.getText();
+        int day;
+        int month;
+        int year;
         String email = inEmail.getText();
         String password = inPassword.getText();
         String phoneNumber = inNumber.getText();
@@ -88,6 +88,14 @@ public class TertiaryController {
 
             //Zip
             CustomerValidator.zipValidator(zip);
+
+
+                //Cheks for error in Date
+                day = Integer.parseInt(inDay.getText());
+                month = Integer.parseInt(inMonth.getText());
+                year = Integer.parseInt(inYear.getText());
+
+
 
             //email
             CustomerValidator.emailValidator(email);
@@ -133,8 +141,9 @@ public class TertiaryController {
 
             } catch(IOException e){
             System.out.println("The email you have entered already exists, choose another Email");
+            }catch (InvalidDateException e) {
+                e.printStackTrace();
             }
-
 
 
         } catch (IllegalArgumentException e){

@@ -5,15 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Writer;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -58,10 +55,13 @@ public class QuaternaryController implements Initializable {
         @FXML
         void registerBtnClicked(ActionEvent event) {
 
-                String product = productName.getText();
-                int price = Integer.parseInt(productPrice.getText());
+                String product;
+                int price;
 
                 try{
+                        product = productName.getText();
+                        price = Integer.parseInt(productPrice.getText());
+
                         // Validating product name
                         ItemValidator.itemNameValidator(product);
 
@@ -70,7 +70,9 @@ public class QuaternaryController implements Initializable {
 
                         newItem.ItemRegistery(product,price);
                 } catch (IllegalArgumentException e){
-                        System.out.println("ERROR: " + e.getMessage());
+                        System.out.println("You have not entered any information");
+                } catch (RuntimeException e){
+                        System.out.println("Error: " + e.getMessage());
                 }
         }
 
@@ -101,8 +103,12 @@ public class QuaternaryController implements Initializable {
         void openFileMenuClicked(ActionEvent event) {
 
                 FileChooser fileChooser = new FileChooser();
+
+                // Set extension filter for text files
                 FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt", "*.jobj");
                 fileChooser.getExtensionFilters().add(extFilter);
+
+                //Show open file dialog
                 File file = fileChooser.showOpenDialog(PrimaryStage);
 
                 Path path = Paths.get(file.getPath());

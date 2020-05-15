@@ -17,7 +17,7 @@ public class FileOpenerTxt implements FileOpener {
 
                 String line;
 
-                // create a new item for wach line
+                // create a new item for each line
                 while ((line = reader.readLine()) != null){
                     Item t = ParseItem.parseItem(line);
                     list.add(t);
