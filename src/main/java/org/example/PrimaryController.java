@@ -57,7 +57,7 @@ public class PrimaryController {
             while (customerScanner.hasNextLine()){
                 final String customerLineFromFile = customerScanner.nextLine();
                 if (customerLineFromFile.contains(userName) && customerLineFromFile.contains(userPassword)){
-                    System.out.println("Customer: Congrats mothafucka " + userName + " u have logged in");
+                    System.out.println("Customer: Congrats " + userName + " u have logged in");
                     // Sends customer to the customer page
                     App.setRoot("secondary");
                     break;
@@ -71,7 +71,7 @@ public class PrimaryController {
             while (adminScanner.hasNextLine()){
                 final String adminLineFromFile = adminScanner.nextLine();
                 if (adminLineFromFile.contains(userName) && adminLineFromFile.contains(userPassword)){
-                    System.out.println("Admin: Congrats mothafucking " + userName + " u have logged in");
+                    System.out.println("Admin: Congrats " + userName + " u have logged in");
                     // Sends admin to the admin page
                     App.setRoot("quaternary");
                     break;
