@@ -1,6 +1,9 @@
 package org.example;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
@@ -15,14 +18,6 @@ import javafx.scene.image.ImageView;
 
 public class SecondaryController implements Initializable {
 
-    @FXML
-    private ImageView ivGas;
-
-    @FXML
-    private ImageView ivColor;
-
-    @FXML
-    private ImageView ivWheel;
 
     @FXML
     private RadioButton rbGas;
@@ -75,14 +70,20 @@ public class SecondaryController implements Initializable {
     @FXML
     private TextArea taSummary;
 
+    @FXML
+    private ImageView image1;
 
     @FXML
-    void orderAction(ActionEvent event) {
+    void orderAction(ActionEvent event) throws FileNotFoundException {
         Order order = new Order();
         DecimalFormat currency = new DecimalFormat("$,###.00");
 
+        //Saving previous user's order(s)
+        PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
+        System.setOut(out);
 
 
+        //Setting each price on the buttons
         if (rb14.isSelected()){
             order.setPrice2(200);
 
@@ -94,21 +95,37 @@ public class SecondaryController implements Initializable {
 
         }
 
-
+        //Setting each price on the buttons
         if (rbGas.isSelected()){
             order.setType(1); // 1 for gas, 2 for electrical, 3 for hybrid
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(1000);
+
+            //PrintStream, writes info on the last order of the last buyer to output.txt
+            System.out.println(rbGas.getText() + " "
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
+                    + " "  + "\n");
+
             taSummary.appendText(rbGas.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
 
+
         } else if (rbElectrical.isSelected() ){
             order.setType(2);
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(2000);
+
+            //output.txt
+            System.out.println(rbElectrical.getText() + " "
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
+                    + " "  + "\n");
             taSummary.appendText(rbElectrical.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
@@ -119,6 +136,14 @@ public class SecondaryController implements Initializable {
             order.setType(3);
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(3000);
+
+            //output.txt
+            System.out.println(rbHybrid.getText() + " "
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
+                    + " "  + "\n");
+
             taSummary.appendText(rbHybrid.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
@@ -132,7 +157,7 @@ public class SecondaryController implements Initializable {
     }
 
 
-
+//Reset button for all values
     @FXML
     void resetAction(ActionEvent event) {
         rbGas.setSelected(false);

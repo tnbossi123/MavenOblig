@@ -9,7 +9,7 @@ public class Order {
     private int rim;
     private double colorprice;
 
-
+//getter and setters
     public int getRim() {
         return rim;
     }
