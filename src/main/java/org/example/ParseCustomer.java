@@ -11,7 +11,7 @@ public class ParseCustomer {
 
         String[] strings = str.split(CustomerFormatter.DELIMITTER);
 
-        if (strings.length != 7) {
+        if (strings.length != 10) {
             throw new InvalidCustomerFormatException("Wrong use or special character");
         }
 

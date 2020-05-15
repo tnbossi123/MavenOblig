@@ -83,7 +83,7 @@ public class SecondaryController implements Initializable {
         System.setOut(out);
 
 
-
+        //Setting each price on the buttons
         if (rb14.isSelected()){
             order.setPrice2(200);
 
@@ -95,12 +95,13 @@ public class SecondaryController implements Initializable {
 
         }
 
-
+        //Setting each price on the buttons
         if (rbGas.isSelected()){
             order.setType(1); // 1 for gas, 2 for electrical, 3 for hybrid
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(1000);
 
+            //PrintStream, writes info on the last order of the last buyer to output.txt
             System.out.println(rbGas.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
@@ -118,6 +119,13 @@ public class SecondaryController implements Initializable {
             order.setType(2);
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(2000);
+
+            //output.txt
+            System.out.println(rbElectrical.getText() + " "
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
+                    + " "  + "\n");
             taSummary.appendText(rbElectrical.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
@@ -128,6 +136,14 @@ public class SecondaryController implements Initializable {
             order.setType(3);
             order.setColor(cbColor.getSelectionModel().getSelectedIndex());
             order.setPrice(3000);
+
+            //output.txt
+            System.out.println(rbHybrid.getText() + " "
+                    + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
+                    ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
+                    currency.format(order.getPrice() + order.getPrice2())
+                    + " "  + "\n");
+
             taSummary.appendText(rbHybrid.getText() + " "
                     + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
@@ -141,7 +157,7 @@ public class SecondaryController implements Initializable {
     }
 
 
-
+//Reset button for all values
     @FXML
     void resetAction(ActionEvent event) {
         rbGas.setSelected(false);
