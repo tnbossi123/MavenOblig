@@ -37,8 +37,6 @@ public class SecondaryController implements Initializable {
     @FXML
     private ImageView image1;
 
-    @FXML
-    private ComboBox<String> brandSelector;
 
     @FXML
     private ComboBox<String> cbColor;
@@ -49,6 +47,9 @@ public class SecondaryController implements Initializable {
         //Combobox
         @FXML
         private ComboBox<String> cbBrand;
+        private final String[] brand = {"Mercedes-Benz", "BMW", "Audi"};
+        private final ObservableList<String> brandList = FXCollections.observableArrayList(brand);
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,6 +57,7 @@ public class SecondaryController implements Initializable {
 
 
         cbColor.setItems(colorList);
+        cbBrand.setItems(brandList);
 
         //Superuser can add brands to store
         List<String> myList;
@@ -63,7 +65,7 @@ public class SecondaryController implements Initializable {
             myList = Files.lines(Paths.get("brandsAdd.txt")).collect(Collectors.toList());
             cbBrand.setItems(FXCollections.observableArrayList(myList));
         } catch (IOException e) {
-            System.err.println("Couldn't find file");
+            System.err.println("Couldn't find file brandsAdd.txt");
         }
 
         //Superuser can add colors to store
@@ -72,7 +74,7 @@ public class SecondaryController implements Initializable {
             myList = Files.lines(Paths.get("colorsAdd.txt")).collect(Collectors.toList());
             cbBrand.setItems(FXCollections.observableArrayList(myList));
         } catch (IOException e) {
-            System.err.println("Couldn't find file");
+            System.err.println("Couldn't find file colorsAdd.txt");
         }
     }
 
@@ -94,9 +96,6 @@ public class SecondaryController implements Initializable {
 
     @FXML
     private Button secondaryButton;
-
-
-
 
 
 
@@ -138,13 +137,13 @@ public class SecondaryController implements Initializable {
             order.setPrice(1000);
 
             //PrintStream, writes info on the last order of the last buyer to output.txt
-            System.out.println(rbGas.getText() + " "
+            System.out.println(rbGas.getText() + " " + cbBrand.getValue()
                      + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
 
-            taSummary.appendText(rbGas.getText() + " "
+            taSummary.appendText(rbGas.getText() + " " + cbBrand.getValue()
                      + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
@@ -157,11 +156,11 @@ public class SecondaryController implements Initializable {
             order.setPrice(2000);
 
             //output.txt
-            System.out.println(rbElectrical.getText() + " in " + cbColor.getValue() + " with " +
+            System.out.println(rbElectrical.getText()+ " " + cbBrand.getValue() + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
-            taSummary.appendText(rbElectrical.getText() + " "
+            taSummary.appendText(rbElectrical.getText() + " " + cbBrand.getValue()
                      + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
@@ -173,13 +172,13 @@ public class SecondaryController implements Initializable {
             order.setPrice(3000);
 
             //output.txt
-            System.out.println(rbHybrid.getText() + " "
+            System.out.println(rbHybrid.getText() + " " + cbBrand.getValue()
                      + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
                     + " "  + "\n");
 
-            taSummary.appendText(rbHybrid.getText() + " "
+            taSummary.appendText(rbHybrid.getText() + " " + cbBrand.getValue()
                      + " in " + cbColor.getValue() + " with " +
                     ((RadioButton) tireSize.getSelectedToggle()).getText() + " wheels " +
                     currency.format(order.getPrice() + order.getPrice2())
