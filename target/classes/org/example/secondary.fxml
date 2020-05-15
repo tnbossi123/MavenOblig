@@ -15,33 +15,31 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="700" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #3D485F#3D485F #3D485F#3D485F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SecondaryController">
    <children>
       <Button fx:id="secondaryButton" layoutX="14.0" layoutY="523.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="33.0" prefWidth="76.0" text="Go back" />
-      <Label layoutX="120.0" layoutY="67.0" text="Type" />
-      <RadioButton fx:id="rbGas" layoutX="121.0" layoutY="90.0" mnemonicParsing="false" text="Gas">
+      <Label layoutX="42.0" layoutY="103.0" text="Type" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <RadioButton fx:id="rbGas" layoutX="121.0" layoutY="90.0" mnemonicParsing="false" text="Gas" textFill="WHITE">
          <toggleGroup>
             <ToggleGroup fx:id="fuelType" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="rbElectrical" layoutX="121.0" layoutY="114.0" mnemonicParsing="false" text="Electrical" toggleGroup="$fuelType" />
-      <RadioButton fx:id="rbHybrid" layoutX="121.0" layoutY="139.0" mnemonicParsing="false" text="Hybrid" toggleGroup="$fuelType" />
-      <Label layoutX="28.0" layoutY="220.0" text="BRAND">
+      <RadioButton fx:id="rbElectrical" layoutX="121.0" layoutY="114.0" mnemonicParsing="false" text="Electrical" textFill="WHITE" toggleGroup="$fuelType" />
+      <RadioButton fx:id="rbHybrid" layoutX="121.0" layoutY="139.0" mnemonicParsing="false" text="Hybrid" textFill="WHITE" toggleGroup="$fuelType" />
+      <Label layoutX="28.0" layoutY="220.0" text="BRAND" textFill="WHITE">
          <font>
             <Font name="Helvetica" size="26.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rb14" layoutX="447.0" layoutY="202.0" mnemonicParsing="false" text="14 inch">
+      <RadioButton fx:id="rb14" layoutX="447.0" layoutY="202.0" mnemonicParsing="false" text="14 inch" textFill="WHITE">
          <toggleGroup>
             <ToggleGroup fx:id="tireSize" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="rb16" layoutX="447.0" layoutY="226.0" mnemonicParsing="false" text="16 inch" toggleGroup="$tireSize" />
-      <RadioButton fx:id="rb19" layoutX="447.0" layoutY="250.0" mnemonicParsing="false" text="19 inch" toggleGroup="$tireSize" />
-      <Button fx:id="btnOrder" layoutX="502.0" layoutY="452.0" mnemonicParsing="false" onAction="#orderAction" text="Order" />
-      <TextArea fx:id="taSummary" layoutX="172.0" layoutY="326.0" prefHeight="200.0" prefWidth="310.0" />
-      <Button fx:id="btnReset" layoutX="502.0" layoutY="496.0" mnemonicParsing="false" onAction="#resetAction" text="Reset" />
+      <RadioButton fx:id="rb16" layoutX="447.0" layoutY="226.0" mnemonicParsing="false" text="16 inch" textFill="WHITE" toggleGroup="$tireSize" />
+      <RadioButton fx:id="rb19" layoutX="447.0" layoutY="250.0" mnemonicParsing="false" text="19 inch" textFill="WHITE" toggleGroup="$tireSize" />
+      <Button fx:id="btnOrder" layoutX="588.0" layoutY="407.0" mnemonicParsing="false" onAction="#orderAction" text="Order" />
+      <TextArea fx:id="taSummary" layoutX="134.0" layoutY="365.0" prefHeight="200.0" prefWidth="420.0" />
+      <Button fx:id="btnReset" layoutX="589.0" layoutY="465.0" mnemonicParsing="false" onAction="#resetAction" text="Reset" />
       <ComboBox fx:id="cbBrand" layoutX="142.0" layoutY="231.0" prefWidth="150.0" />
       <ComboBox fx:id="cbColor" layoutX="447.0" layoutY="102.0" prefWidth="150.0" />
-      <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="217.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../java/org/example/pics/gas.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
