@@ -12,7 +12,7 @@ package org.example;
                 conversionSuccessful = true;
                 return result;
             } catch(NumberFormatException e) {
-                Dialogs.showErrorDialog("Du må skrive inn et gyldig tall.");
+                Dialogs.showErrorDialog("Insert valid number");
                 conversionSuccessful = false;
                 return 0;
             }

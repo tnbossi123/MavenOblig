@@ -13,17 +13,17 @@ public class CustomerRegistery {
         if (inDay < 1 || inDay > 31) {
 
             // throws exception if the date is wrong
-            throw new InvalidDateException("You have chosen a unvalid date (1-31)");
+            throw new InvalidDateException("You have chosen a invalid date (1-31)");
 
         } else if(inMonth < 1 || inMonth > 12){
 
             // throws exception if the month is wrong
-            throw new InvalidDateException("You have chosen a unvalid month(1-12)");
+            throw new InvalidDateException("You have chosen a invalid month(1-12)");
 
-        } else if (inYear < 1900 || inYear > 2020){
+        } else if (inYear < 1900 || inYear > 2002){
 
             // throws exception if the year is wrong
-            throw new InvalidDateException("You have chosen a unvalid year (1900-2020)");
+            throw new InvalidDateException("You have chosen a invalid year (1900-2020)");
 
         } else {
 

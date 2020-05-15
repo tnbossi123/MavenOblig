@@ -6,8 +6,6 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -38,17 +36,17 @@
       <Button fx:id="btnOrder" layoutX="588.0" layoutY="407.0" mnemonicParsing="false" onAction="#orderAction" text="Order" />
       <TextArea fx:id="taSummary" layoutX="134.0" layoutY="365.0" prefHeight="200.0" prefWidth="420.0" />
       <Button fx:id="btnReset" layoutX="589.0" layoutY="465.0" mnemonicParsing="false" onAction="#resetAction" text="Reset" />
-      <ComboBox fx:id="cbBrand" layoutX="142.0" layoutY="231.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbBrand" layoutX="134.0" layoutY="222.0" prefWidth="150.0" />
       <ComboBox fx:id="cbColor" layoutX="447.0" layoutY="102.0" prefWidth="150.0" />
-      <ImageView fx:id="image2" fitHeight="86.0" fitWidth="76.0" layoutX="344.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/color.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="image1" fitHeight="86.0" fitWidth="76.0" layoutX="344.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/Users/ardianfetisi/Documents/Programmering/MavenOblig/src/pics/rim.png" />
-         </image>
-      </ImageView>
+      <Label layoutX="362.0" layoutY="101.0" text="Color" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="337.0" layoutY="219.0" text="Tire size" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -129,6 +129,11 @@ public class SecondaryController implements Initializable {
             order.setPrice2(700);
 
         }
+        else{
+                  taSummary.appendText("Choose the parts of your car build!\n");
+
+        }
+
 
         //Setting each price on the buttons
         if (rbGas.isSelected()){

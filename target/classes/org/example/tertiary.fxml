@@ -18,7 +18,7 @@
       <TextField fx:id="inPassword" layoutX="210.0" layoutY="353.0" />
       <TextField fx:id="inNumber" layoutX="210.0" layoutY="389.0" />
       <Label layoutX="100.0" layoutY="130.0" text="Name" textFill="WHITE" />
-      <Label layoutX="104.0" layoutY="160.0" text="Adress" textFill="WHITE" />
+      <Label layoutX="104.0" layoutY="160.0" text="Address" textFill="WHITE" />
       <Label layoutX="103.0" layoutY="190.0" text="Country" textFill="WHITE" />
       <Label layoutX="105.0" layoutY="227.0" text="City" textFill="WHITE" />
       <Label layoutX="107.0" layoutY="259.0" text="Zip" textFill="WHITE" />
@@ -36,5 +36,10 @@
             <Font size="48.0" />
          </font>
       </Text>
+      <Label fx:id="lblError" layoutX="213.0" layoutY="94.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

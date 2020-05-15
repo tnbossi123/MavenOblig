@@ -3,6 +3,7 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -52,6 +53,10 @@ public class TertiaryController {
 
     @FXML
     private TextField inNumber;
+
+    @FXML
+    private Label lblError;
+
 
     // Register Form
     @FXML

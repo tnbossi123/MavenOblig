@@ -14,11 +14,11 @@ public class Item implements Serializable {
     public Item(String itemName, int itemPrice){
 
         if (!ItemValidator.itemNameValidator(itemName)){
-            throw new IllegalArgumentException("Unvalid car brand chosen");
+            throw new IllegalArgumentException("Invalid car brand chosen");
         }
 
         if (!ItemValidator.itemPriceValidator(itemPrice)){
-            throw new IllegalArgumentException("Unvalid price is chosen");
+            throw new IllegalArgumentException("Invalid price is chosen");
         }
 
         this.itemName = new SimpleStringProperty(itemName);

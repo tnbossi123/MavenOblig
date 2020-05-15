@@ -140,7 +140,7 @@ public class QuaternaryController implements Initializable {
                 try{
                         event.getRowValue().setItemName(event.getNewValue());
                 } catch (IllegalArgumentException e){
-                        Dialogs.showErrorDialog("Unvalid product name: " + e.getMessage());
+                        Dialogs.showErrorDialog("Invalid product name: " + e.getMessage());
                 }
                 tableView.refresh();
         }
@@ -150,7 +150,7 @@ public class QuaternaryController implements Initializable {
                 try {
                         event.getRowValue().setItemPrice(event.getNewValue());
                 } catch (NumberFormatException e){
-                        Dialogs.showErrorDialog("Unvalid price: " + e.getMessage());
+                        Dialogs.showErrorDialog("Invalid price: " + e.getMessage());
                 }
 
                 tableView.refresh();

@@ -10,7 +10,7 @@ public class ItemValidator {
     // iTems price
 
     public static final int MAX_PRICE = 100_000;
-    public static final int MIN_PRICE = 5000;
+    public static final int MIN_PRICE = 2000;
 
     static boolean itemPriceValidator(int iPrice){
         return iPrice >= MIN_PRICE && iPrice <= MAX_PRICE;
