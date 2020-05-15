@@ -26,7 +26,6 @@ public class Item implements Serializable {
 
     }
 
-
     // Getters
     public String getItemName() {
         return itemName.get();
@@ -36,13 +35,20 @@ public class Item implements Serializable {
         return itemPrice.get();
     }
 
-    // Setter
+    //setter
 
-    public void setItemName(String itemName) {
+
+    public final void setItemName(String itemName) {
+        if (!ItemValidator.itemNameValidator(itemName)){
+            throw new IllegalArgumentException("Name can't be empty nor contain numbers");
+        }
         this.itemName.set(itemName);
     }
 
-    public void setItemPrice(int itemPrice) {
+    public final void setItemPrice(int itemPrice) {
+        if (!ItemValidator.itemPriceValidator(itemPrice)){
+            throw new NumberFormatException("Cannot contain anything else than numbers");
+        }
         this.itemPrice.set(itemPrice);
     }
 
@@ -62,8 +68,6 @@ public class Item implements Serializable {
         this.itemName = new SimpleStringProperty(itemName);
         this.itemPrice = new SimpleIntegerProperty(itemPrice);
 
-        setItemName(itemName);
-        setItemPrice(itemPrice);
     }
 
 }

@@ -16,21 +16,24 @@ public class ItemRegistery {
 
     private transient ObservableList<Item> itemRegister = FXCollections.observableArrayList();
 
-    public List<Item> getItemRegister(){
-        return itemRegister;
-    }
-
-    public void addItem(Item t){
-        itemRegister.add(t);
-    }
-
-    public void removeAll(){
-        itemRegister.clear();
-    }
-
     public void attachTableView(TableView tv){
         tv.setItems(itemRegister);
     }
+
+    public void setItemRegister(ArrayList<Item> itemRegister) {
+        this.itemRegister.clear();
+        this.itemRegister.addAll(itemRegister);
+
+    }
+
+    public void ItemRegistery(String lblItemName, int lblItemPrice){
+
+
+        Item newItem = new Item(lblItemName, lblItemPrice);
+        itemRegister.add(newItem);
+
+    }
+
 
     //Filtering by Name/Price
     public void filterItemRegister(String key, String input, TableView tv){
@@ -49,17 +52,11 @@ public class ItemRegistery {
         }
     }
 
-    // Serializing
-    private void writeitems(ObjectOutputStream s) throws IOException{
-        s.defaultWriteObject();
-        s.writeObject(new ArrayList<>(itemRegister));
+    public List<Item> getItemRegister(){
+        return itemRegister;
     }
 
-    private void readItems(ObjectInputStream s) throws IOException, ClassNotFoundException{
-    List<Item> list = (List<Item>) s.readObject();
-    itemRegister = FXCollections.observableArrayList();
-    itemRegister.addAll(list);
-    }
+
 
 
 

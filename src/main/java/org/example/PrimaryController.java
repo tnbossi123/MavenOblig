@@ -17,6 +17,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import static org.example.App.setRoot;
+
 
 public class PrimaryController {
 
@@ -95,7 +97,7 @@ public class PrimaryController {
 
     @FXML
     void switchToTertiary(ActionEvent event) throws IOException {
-        App.setRoot("tertiary");
+        setRoot("tertiary");
     }
 
 }
