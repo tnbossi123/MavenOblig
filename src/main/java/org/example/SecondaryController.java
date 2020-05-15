@@ -2,10 +2,14 @@ package org.example;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,41 +32,50 @@ public class SecondaryController implements Initializable {
     private RadioButton rbHybrid;
 
     @FXML
+    private ImageView image2;
+
+    @FXML
+    private ImageView image1;
+
+    @FXML
     private ComboBox<String> brandSelector;
 
     @FXML
     private ComboBox<String> cbColor;
-    private final String[] color = {"red", "white"};
+    private final String[] color = {"Red", "White"};
     private final ObservableList<String> colorList = FXCollections.observableArrayList(color);
 
-    @FXML
-    public void initialize() throws IOException{
+
+        //Combobox
+        @FXML
+        private ComboBox<String> cbBrand;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // initialize the lists
 
 
-        // Reading items from txt file
+        cbColor.setItems(colorList);
 
-        BufferedReader brandRead = new BufferedReader(new FileReader("brands.txt"));
-
+        //Superuser can add brands to store
+        List<String> myList;
         try {
-            StringBuilder sb = new StringBuilder();
-            String line = brandRead.readLine();
-
-            while (line != null){
-
-                brandSelector.getItems().addAll(line);
-
-                sb.append(line);
-                line = brandRead.readLine();
-            }
-        } finally {
-            brandRead.close();
-            System.out.println(brandSelector);
-
+            myList = Files.lines(Paths.get("brandsAdd.txt")).collect(Collectors.toList());
+            cbBrand.setItems(FXCollections.observableArrayList(myList));
+        } catch (IOException e) {
+            System.err.println("Couldn't find file");
         }
 
-        brandSelector.getSelectionModel().select(0);
-
+        //Superuser can add colors to store
+        List<String> myList2;
+        try {
+            myList = Files.lines(Paths.get("colorsAdd.txt")).collect(Collectors.toList());
+            cbBrand.setItems(FXCollections.observableArrayList(myList));
+        } catch (IOException e) {
+            System.err.println("Couldn't find file");
+        }
     }
+
 
 
 
@@ -83,16 +96,7 @@ public class SecondaryController implements Initializable {
     private Button secondaryButton;
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // initialize the lists
 
-
-        cbColor.setItems(colorList);
-
-
-
-    }
 
 
 
@@ -102,8 +106,7 @@ public class SecondaryController implements Initializable {
     @FXML
     private TextArea taSummary;
 
-    @FXML
-    private ImageView image1;
+
 
 
     @FXML
@@ -198,7 +201,6 @@ public class SecondaryController implements Initializable {
         rbElectrical.setSelected(false);
         rbHybrid.setSelected(false);
         cbColor.setValue(null);
-
         rb14.setSelected(false);
         rb16.setSelected(false);
         rb19.setSelected(false);
