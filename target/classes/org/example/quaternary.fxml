@@ -31,19 +31,18 @@
       <Button layoutX="189.0" layoutY="231.0" onAction="#registerBtnClicked" text="Add product" />
       <TableView fx:id="tableView" editable="true" layoutX="23.0" layoutY="388.0" prefHeight="404.0" prefWidth="551.0">
          <columns>
-            <TableColumn fx:id="productColumn" minWidth="90" onEditCommit="#productChange" prefWidth="274.0" text="Product">
+            <TableColumn minWidth="90" onEditCommit="#productChange" prefWidth="274.0" text="Product">
                <cellValueFactory>
-                  <PropertyValueFactory property="Product" />
+                  <PropertyValueFactory property="itemName" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="priceColumn" minWidth="0.0" onEditCommit="#priceChange" prefWidth="276.0" text="Pris">
+
+            <TableColumn minWidth="0.0" onEditCommit="#priceChange" prefWidth="276.0" text="Price">
                <cellValueFactory>
-                  <PropertyValueFactory property="Price" />
+                  <PropertyValueFactory property="itemPrice" />
                </cellValueFactory>
-               <cellFactory>
-                  <TextFieldTableCell fx:factory="forTableColumn" />
-               </cellFactory>
             </TableColumn>
+
          </columns>
       </TableView>
       <MenuBar layoutX="-1.0">
